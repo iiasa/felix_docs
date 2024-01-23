@@ -2,7 +2,7 @@ title: FeliX
 description: Documentation for the FeliX Model
 remote_theme: just-the-docs
 
-url: https://iiasa.github.io/felix_docs/
+url: "https://iiasa.github.io/felix_docs/"
 
 logo: "/images/iiasa_png logo_blue.png"
 
