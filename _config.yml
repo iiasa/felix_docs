@@ -1,6 +1,7 @@
 title: FeliX
 description: Documentation for the FeliX Model
-remote_theme: just-the-docs
-
+# remote_theme: just-the-docs
+theme: "just-the-docs"
+remote_theme: pmarsceill/just-the-docs
 url: "https://iiasa.github.io/felix_docs/"
 
