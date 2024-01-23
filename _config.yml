@@ -4,7 +4,7 @@ description: Documentation for the FeliX Model
 remote_theme: pmarsceill/just-the-docs
 url: ""
 
-logo: "/images/iiasa_png logo_blue.png"
+# logo: "/images/iiasa_png logo_blue.png"
 
 search_enabled: false
 
