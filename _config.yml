@@ -4,13 +4,3 @@ remote_theme: just-the-docs
 
 url: "https://iiasa.github.io/felix_docs/"
 
-logo: "/images/iiasa_png logo_blue.png"
-
-search_enabled: false
-
-aux_links:
-  "FeliX model on GitHub":
-    - "https://github.com/iiasa/Felix-Model"
-
-# Makes Aux links open in a new tab. Default is false
-aux_links_new_tab: true
