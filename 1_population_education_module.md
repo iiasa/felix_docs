@@ -17,18 +17,18 @@ Population growth is based on an ageing chain and computes the male and female p
 |Figure 1.1. Inflows and outflows to different population cohorts in the population modules of FeliX. Population cohorts also distinguish gender into male and female.|
 
 
-The ageing chain represents the transition of newborns through the age cohorts as they age. It means that each age cohort (except the “0–4” cohort) has one inflow (maturation of the previous cohort) and two outflows (maturation to the next cohort and mortality). Population of each gender and age interval (\(Pop_{gender,age}\), Eq. 1.1) accumulates by three flows, determining the net rate of change ($\frac{dPop}{dt}$). These three flows are birth rate ($Birth_{gender,age}$), death rate ($Death_{gender,age}$), and maturation rate ($Matur_{gender,age}$) by gender and age.
+The ageing chain represents the transition of newborns through the age cohorts as they age. It means that each age cohort (except the “0–4” cohort) has one inflow (maturation of the previous cohort) and two outflows (maturation to the next cohort and mortality). Population of each gender and age interval ($Pop_{gender,age}$, Eq. 1.1) accumulates by three flows, determining the net rate of change ($\frac{dPop}{dt}$). These three flows are birth rate ($Birth_{gender,age}$), death rate ($Death_{gender,age}$), and maturation rate ($Matur_{gender,age}$) by gender and age.
 
 
 
-$$
+```math
 \frac{dPop_{gender,age}}{dt} = 
 \begin{cases}
     Birth_{gender}(t)-Matur_{gender,age}(t)-Death_{gender,age}(t) &\text{if \ $age=“0‒4”$} \\
     Matur_{gender,age-1}(t)-Matur_{gender,age}(t)-Death_{gender,age}(t) &\text{if \ $“5‒9” \leq age \leq “95‒99”$} \\
     Matur_{gender,age-1}(t)-Death_{gender,age}(t) &\text{if \ $age=“100+”$} \\
 \end{cases}
-$$
+```
 (Eq. 1.1)
 
 $Matur_{gender,age}$ is formulated as the division of population by the interval duration ($Intvl \_ Dur$, 5 years). It assumes a homogenous distribution of population within the age group.
