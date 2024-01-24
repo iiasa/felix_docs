@@ -1,9 +1,8 @@
 ---
 title: 1. Population and education
-layout: [mathjax](_layouts/mathjax.html)
+layout: [mathjax][def]
 nav_order: 3
 description: the population and education section of felix
-math: [mathjax](_layouts/mathjax.html)
 ---
 
 # 1. Population and education
@@ -237,3 +236,6 @@ Labor force in FeliX is distinguished as skilled ($LF_{skilled}$) and unskilled 
 - Riahi, K., Van Vuuren, D.P., Kriegler, E., Edmonds, J., O’Neill, B.C., Fujimori, S., Bauer, N., Calvin, K., Dellink, R., Fricko, O., Lutz, W., Popp, A., Cuaresma, J.C., Kc, S., Leimbach, M., Jiang, L., Kram, T., Rao, S., Emmerling, J., Ebi, K., Hasegawa, T., Havlik, P., Humpenöder, F., Da Silva, L.A., Smith, S., Stehfest, E., Bosetti, V., Eom, J., Gernaat, D., Masui, T., Rogelj, J., Strefler, J., Drouet, L., Krey, V., Luderer, G., Harmsen, M., Takahashi, K., Baumstark, L., Doelman, J.C., Kainuma, M., Klimont, Z., Marangoni, G., Lotze-Campen, H., Obersteiner, M., Tabeau, A., Tavoni, M., 2017. The Shared Socioeconomic Pathways and their energy, land use, and greenhouse gas emissions implications: An overview. Global Environmental Change 42, 153–168. https://doi.org/10.1016/j.gloenvcha.2016.05.009
 - The World Bank, 2020. World Bank Open Data.
 - Wittgenstein Centre, 2020. Wittgenstein Centre human capital data explorer. http://dataexplorer.wittgensteincentre.org/wcde-v2/.
+
+
+[def]: _layouts/mathjax.html
