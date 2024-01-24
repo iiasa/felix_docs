@@ -1,8 +1,9 @@
 ---
 title: Introduction
-layout: default
+layout: [mathjax](_layouts/mathjax.html)
 nav_order: 3
 description: the introduction section of felix
+math: [mathjax](_layouts/mathjax.html)
 ---
 
 # Introduction

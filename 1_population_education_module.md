@@ -1,8 +1,9 @@
 ---
 title: 1. Population and education
-layout: default
+layout: [mathjax](_layouts/mathjax.html)
 nav_order: 3
 description: the population and education section of felix
+math: [mathjax](_layouts/mathjax.html)
 ---
 
 # 1. Population and education
