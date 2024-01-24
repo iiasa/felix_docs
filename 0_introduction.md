@@ -1,9 +1,8 @@
 ---
 title: Introduction
-layout: [mathjax](_layouts/mathjax.html)
+layout: [mathjax][def]
 nav_order: 3
 description: the introduction section of felix
-math: [mathjax](_layouts/mathjax.html)
 ---
 
 # Introduction
@@ -62,3 +61,6 @@ The model outcomes are determined by many interacting feedback loops within and 
 - Sterman, J., 2000. Business dynamics: systems thinking and modeling for a complex world. Irwin/McGraw-Hill, Boston.
 - Walsh, B., Ciais, P., Janssens, I.A., Peñuelas, J., Riahi, K., Rydzak, F., Van Vuuren, D.P., Obersteiner, M., 2017. Pathways for balancing CO2 emissions and sinks. Nat Commun 8, 14856. https://doi.org/10.1038/ncomms14856
 
+
+
+[def]: _layouts/mathjax.html
