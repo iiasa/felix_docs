@@ -20,6 +20,7 @@ Population growth is based on an ageing chain and computes the male and female p
 The ageing chain represents the transition of newborns through the age cohorts as they age. It means that each age cohort (except the “0–4” cohort) has one inflow (maturation of the previous cohort) and two outflows (maturation to the next cohort and mortality). Population of each gender and age interval ($Pop_{gender,age}$, Eq. 1.1) accumulates by three flows, determining the net rate of change ($\frac{dPop}{dt}$). These three flows are birth rate ($Birth_{gender,age}$), death rate ($Death_{gender,age}$), and maturation rate ($Matur_{gender,age}$) by gender and age.
 
 
+
 $$
 \frac{dPop_{gender,age}}{dt} = 
 \begin{cases}
