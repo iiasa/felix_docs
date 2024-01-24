@@ -11,7 +11,9 @@ Full of Economic-Environment Linkages and Integration dX/dt (FeliX) 2.0 is a sys
 This is the full-version documentation of FeliX 2.0. This documentation stands alone as a technical documentation of FeliX, and also supports the scientific publication of FeliX.
 
 ## Basic information about System Dynamics (SD)
-System dynamics (SD) is an interdisciplinary approach to understanding the dynamic behavior of complex systems over time. It considers the interactions and feedback loops among various components to model and simulate the system's behavior (Figure 1). Feedback loops are a fundamental concept in system dynamics, representing the cause-and-effect relationships within a system. There are two types of feedback loops: reinforcing loops (marked as "+"), which amplify changes and lead to exponential growth or decline, and balancing loops (marked as "-"), which counteract changes and maintain equilibrium.
+System dynamics (SD) is an interdisciplinary approach to understanding the dynamic behavior of complex systems over time (Meadows and Wright, 2008; Sterman, 2000). Models such as the World3 model (Meadows et al., 1972), the Integrated Sustainable Development Goals model (Millennium Institute, 2021), and the Earth4All model (Dixson-Declève et al., 2022) are all based on SD to simulate how different policies to affect human wellbeing, societies and ecosystems in the short and long-term. SD considers the interactions and feedback loops among various components to model and simulate the system's behavior (Figure 1). Feedback loops are a fundamental concept in system dynamics, representing the cause-and-effect relationships within a system. There are two types of feedback loops: reinforcing loops (marked as "+"), which amplify changes and lead to exponential growth or decline, and balancing loops (marked as "-"), which counteract changes and maintain equilibrium.
+
+
 |[![](images/0_sd_info.png)](images/0_sd_info.png)
 |:--|
 |Figure 1. Interactions and feedback loops in a simple population system.|
@@ -47,3 +49,15 @@ The model outcomes are determined by many interacting feedback loops within and 
 |[![](images/overall_structure_felix.png)](images/overall_structure_felix.png)
 |:--|
 |Figure 3. Overview of the FeliX model. Source: [Moallemi et al. (2022)](https://linkinghub.elsevier.com/retrieve/pii/S2590332222003244).|
+
+
+## References
+- Dixson-Declève, S., Gaffney, O., Ghosh, J., Randers, J., Rockström, J., Stoknes, P.E., 2022. Earth for all: a survival guide for humanity: a report to the Club of Rome (2022), fifty years after The limits to growth (1972). New Society Publishers, Gabriola Island, British Columbia, Canada.
+- Eker, S., Reese, G., Obersteiner, M., 2019. Modelling the drivers of a widespread shift to sustainable diets. Nat Sustain 2, 725–735. https://doi.org/10.1038/s41893-019-0331-1
+- Meadows, D.H., Meadows, D.L., Randers, J., Behrens III, W.W. (Eds.), 1972. The Limits to growth: a report for the Club of Rome’s project on the predicament of mankind. Universe Books, New York.
+- Meadows, D.H., Wright, D., 2008. Thinking in systems: a primer. Chelsea Green Pub, White River Junction, Vt.
+- Millennium Institute, 2021. iSDG: Documentation.
+- Rydzak, F., Obersteiner, M., Kraxner, F., Fritz, S., McCallum, I., 2013. FeliX3–Impact Assessment Model: Systemic View across Societal Benefit Areas beyond Global Earth Observation. International Institute for Applied Systems Analysis (IIASA), Laxenburg.
+- Sterman, J., 2000. Business dynamics: systems thinking and modeling for a complex world. Irwin/McGraw-Hill, Boston.
+- Walsh, B., Ciais, P., Janssens, I.A., Peñuelas, J., Riahi, K., Rydzak, F., Van Vuuren, D.P., Obersteiner, M., 2017. Pathways for balancing CO2 emissions and sinks. Nat Commun 8, 14856. https://doi.org/10.1038/ncomms14856
+
