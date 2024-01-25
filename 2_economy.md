@@ -1,7 +1,9 @@
 ---
-title: 2. Economy
+title: "2. Economy"
 layout: default
-nav_order: 3
+parent: Model Overview
+nav_order: 2
+math: katex
 description: the economy section of felix
 ---
 

@@ -1,7 +1,9 @@
 ---
-title: 4. Water
+title: "4. Water"
 layout: default
-nav_order: 3
+parent: Model Overview
+nav_order: 4
+math: katex
 description: the water section of felix
 ---
 

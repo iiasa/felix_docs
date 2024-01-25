@@ -1,7 +1,9 @@
 ---
-title: 9. Biodiversity
+title: "9. Biodiversity"
 layout: default
-nav_order: 3
+parent: Model Overview
+nav_order: 9
+math: katex
 description: the biodiversity section of felix
 ---
 

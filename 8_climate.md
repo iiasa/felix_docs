@@ -1,7 +1,9 @@
 ---
-title: 8. Climate
+title: "8. Climate"
 layout: default
-nav_order: 3
+parent: Model Overview
+nav_order: 8
+math: katex
 description: the climate section of felix
 ---
 

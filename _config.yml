@@ -15,4 +15,4 @@ aux_links:
 # Makes Aux links open in a new tab. Default is false
 aux_links_new_tab: true
 
-math: mathjax
+math: katex
