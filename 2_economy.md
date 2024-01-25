@@ -11,6 +11,7 @@ description: the economy section of felix
 
 ## 2.1. Gross world product (GWP)
 Gross world product ($$GWP$$) in the FeliX model is determined by the total reference economic output ($$REO$$), further influenced by impacts from climate changes ($$Imp\_CC\_on\_GWP$$) and biodiversity ($$Imp\_Biodiv\_on\_GWP$$).
+
 $$
 GWP(t)=REO(t) \times Imp\_CC\_on\_GWP(t) \times Imp\_Biodiv\_on\_GWP(t)
 $$
@@ -68,6 +69,7 @@ $$
 In FeliX, an optional structure that enables using the damage functions obtained from previous studies (Burke et al., 2015; Dietz and Stern, 2015; Kalkuhl and Wenz, 2020; Nordhaus, 2017; Weitzman, 2012), or a custom function defined in a flexible logistic form (Eq. 2.7). $$S\_D$$ is a climate damage function switch that allows users to switch between the options.
 
 $$D\_N(t)$$ is the damage function used by Nordhaus (2017).
+
 $$
 D\_N(t)=
     1-\frac
@@ -120,6 +122,7 @@ $$D\_B1$$ and $$D\_B2$$ are short-term pooled and long-term differentiated damag
 |5.0|21.0|80.0|
 
 $$D\_L(t)$$ is a logistic function that can be used to define custom-shaped damage functions using three parameters $$L\_D$$ (the saturation level), $$k\_D$$ (steepness), and $$x0\_D$$ (the inflection point).
+
 $$
 D\_L(t)= 
     \frac
@@ -145,6 +148,7 @@ $$
 (Eq. 2.8)
 
 The poverty rate of each population group ($$PR_{gender,age}$$) is the share of the population living below a specified poverty level $$PL$$ (Figure 2.1) (Fosu, 2010; Hughes, 2015). When calculating $$PR_{gender,age}$$, income per capita ($$Income\_per\_Cap_{gender,age}$$) is assumed to follow a log-normal distribution characterized by the mean ($$\mu_{gender,age}$$) and standard deviation ($$\sigma_{gender,age}$$) of the normal distribution function of $$\ln(Income\_per\_Cap_{gender,age})$$, based on previous research (Fosu, 2010; Lakner et al., 2022; Liu et al., 2023).
+
 $$
 PR_{gender,age}(t)(Income\_per\_Cap_{gender,age}) \leq PL) =
     \emptyset \Big(
@@ -249,6 +253,7 @@ $$
 |Figure 2.2. Income distribution measured by Lorenz curve. The cumulative labor force fraction at a point on the x-axis is defined as the size of cumulative labor force at this point divided by the size of the total labor force. The x-value of px and a y-value of py mean that the unskilled labor force (the bottom px of the labor force) controls the proportion py of the total income. The Gini coefficient is a numerical value derived from the Lorenz curve to measure income distribution, which is defined as $$A/(A+B)$$. Here, $$A$$ and $$B$$ represent the sizes of the red and blue striped areas. $$B$$ is the sum of $$B1$$ and $$B2$$. The sum of $$A$$ and $$B$$ is 0.5. The perfect equality line corresponds to a Gini coefficient of 0, indicating that every person has the same income.|
 
 By using a triangle and a trapezoid to approximate the areas of $$B1$$ and $$B2$$ (Figure 2.2) (Hughes, 2015), $$Gini_{gender,age}$$ can be reformulated by Eq. 2.15.
+
 $$
 Gini_{gender,age}(t)= 1-
 \frac
@@ -266,6 +271,7 @@ $$
 where $$Tot\_Rel\_Income_{gender,age}$$, $$Rel\_Income_{gender,age,unskilled}$$, and $$Rel\_Income_{gender,age,skilled}$$ denote the relative income of the total, unskilled, and skilled labor force of the corresponding population group, respectively. $$Tot\_Rel\_Income_{gender,age}$$ is assumed to be 100. The values of $$Rel\_Income_{gender,age,unskilled}$$ and $$Rel\_Income_{gender,age,skilled}$$ are based on relative earnings data for OECD countries (OECD, 2020).
 
 $$Income\_per\_Cap_{gender,age}$$ is related to the $$GWP\_per\_Cap$$.
+
 $$
 Income\_per\_Cap_{gender,age}(t) = GWP\_per\_Cap_{gender,age}(t) \times Real\_Income\_Param_{gender,age}
 $$
