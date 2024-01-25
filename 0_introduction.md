@@ -1,11 +1,13 @@
 ---
 title: Introduction
-layout: [mathjax][def]
-nav_order: 3
-description: the introduction section of felix
+layout: default
+nav_order: 2
+description: Introduction page for FeliX - Full of Economic-Environment Linkages and Integration dX/dt (FeliX)
+math: katex
 ---
 
 # Introduction
+
 Full of Economic-Environment Linkages and Integration dX/dt (FeliX) 2.0 is a system dynamics-based integrated assessment model (IAM) that simulates complex interactions among global systems, including population, education, economy, energy, water, land, food, carbon cycle, climate, and biodiversity. FeliX was originally developed for projecting socio-environmental impacts in human-natural systems (Rydzak et al., 2013) and later advanced for exploring emissions pathways (Walsh et al., 2017) and evaluating sustainable diet shifts  (Eker et al., 2019). FeliX is one of the very few models that model human behavior in the human-natural systems considering comprehensive dynamic interactions of socio-economic and environmental sectors. It well addresses the main shortcoming of conventional IAMs  (neglecting feedback perspectives and nonlinear interactions among systems) and covers the breadth of social, economic, and environmental aspects (and their feedback interactions) in one integrated framework. The model operates at an annual timescale and is designed to project global-scale future socioeconomic development and environmental conditions over the long term to 2100. 
 
 This is the full-version documentation of FeliX 2.0. This documentation stands alone as a technical documentation of FeliX, and also supports the scientific publication of FeliX.
@@ -34,15 +36,15 @@ By incorporating these elements, system dynamics provides a powerful tool for an
 ## FeliX structure and module descriptions
 FeliX is a system dynamics model that simulates complex interactions among different global systems: 
 
-1. [Population and education](1_population_education_module.md)
-2. [Economy](economy-module)
-3. [Energy](energy-module)
-4. [Water](water-module)
-5. [Land use and fertilizer use](land-fertilizer-module)
-6. [Diet change](diet-module)
-7. [Carbon cycle](carbon-cycle-module)
-8. [Climate](climate-module)
-9. [Biodiversity](biodiversity-module)
+1. [Population and education](1_population_education.md)
+2. [Economy](2_economy.md)
+3. [Energy](3_energy.md)
+4. [Water](4_water.md)
+5. [Land use and fertilizer use](5_land_use_and_fertilizer_use.md)
+6. [Diet change](6_diet_change.md)
+7. [Carbon cycle](7_carbon_cycle.md)
+8. [Climate](8_climate.md)
+9. [Biodiversity](9_biodiversity.md)
 
 The model outcomes are determined by many interacting feedback loops within and between these systems as shown in Figure 3.
 
@@ -60,7 +62,3 @@ The model outcomes are determined by many interacting feedback loops within and 
 - Rydzak, F., Obersteiner, M., Kraxner, F., Fritz, S., McCallum, I., 2013. FeliX3–Impact Assessment Model: Systemic View across Societal Benefit Areas beyond Global Earth Observation. International Institute for Applied Systems Analysis (IIASA), Laxenburg.
 - Sterman, J., 2000. Business dynamics: systems thinking and modeling for a complex world. Irwin/McGraw-Hill, Boston.
 - Walsh, B., Ciais, P., Janssens, I.A., Peñuelas, J., Riahi, K., Rydzak, F., Van Vuuren, D.P., Obersteiner, M., 2017. Pathways for balancing CO2 emissions and sinks. Nat Commun 8, 14856. https://doi.org/10.1038/ncomms14856
-
-
-
-[def]: _layouts/mathjax.html

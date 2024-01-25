@@ -1,7 +1,9 @@
 ---
-title: 7. Carbon cycle
+title: "7. Carbon cycle"
 layout: default
-nav_order: 3
+parent: Model Overview
+nav_order: 7
+math: katex
 description: the carbon cycle section of felix
 ---
 

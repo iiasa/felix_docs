@@ -1,8 +1,12 @@
 ---
 title: Appendix
 layout: default
-nav_order: 3
+has_children: true
+nav_order: 4
+math: katex
 description: the appendix section of felix
 ---
 
-# Nomenclature
+Appendix for Felix
+
+1. [Nomenclature](10_nomenclature.md)
