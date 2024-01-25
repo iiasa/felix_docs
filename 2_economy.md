@@ -292,4 +292,3 @@ where $$Real\_Income\_Param_{gender,age}$$ is determined by model calibration ba
 - Dixon, P.M., Weiner, J., Mitchell-Olds, T., et al. (1987). Bootstrapping the gini coefficient of inequality. Ecology 68, 1548-1551. 10.2307/1939238. 
 - Gastwirth, J.L. (1972). The estimation of the lorenz curve and gini index. The Review of Economics and Statistics, 306-316. 10.2307/1937992. 
 - OECD (2023). Education and earnings. https://stats.oecd.org/Index.aspx?DataSetCode=EAG_EARNINGS  
-
