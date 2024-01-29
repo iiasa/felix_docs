@@ -175,13 +175,13 @@ $$
 
 (Eq. 1.11)
 
-where $$Grad\_Prim_{gender,age}$$ is graduation rate from primary education (Eq. 1.12), which is equal to enrollment rate to primary education ($$Enrl\_Prim_{gender}$$, Eqs. 13 and 14) yet after a delay of average duration of primary education ($$Delay\_Prim$$).
+where $$Grad\_Prim_{gender,age}$$ is graduation rate from primary education (Eq. 1.12), which is equal to enrollment rate to primary education ($$Enrl\_Prim_{gender}$$, Eqs. 13 and 14) yet equally distributed within the average duration of primary education ($$Dur\_Prim$$).
 
 $$
 Grad\_Prim_{gender,age}(t)= 
 \begin{cases}
-    DELAY1(Enrl\_Prim_{gender}(t),Delay\_Prim) \times \frac{4}{5} &\text{if \ $age=“10‒14”$} \\
-    DELAY1(Enrl\_Prim_{gender}(t),Delay\_Prim) \times \frac{1}{5} &\text{if \ $age=“15‒19”$}
+    DELAY1(Enrl\_Prim_{gender}(t),Dur\_Prim) \times \frac{4}{5} &\text{if \ $age=“10‒14”$} \\
+    DELAY1(Enrl\_Prim_{gender}(t),Dur\_Prim) \times \frac{1}{5} &\text{if \ $age=“15‒19”$}
 \end{cases}
 $$
 
@@ -232,9 +232,9 @@ $$
 MYS(t) =  
     \frac 
     {
-        Delay\_Prim \times \sum_{age\geq“15‒19”} { \sum_{gender} {PEG_{gender,age}(t)}}+
-        (Delay\_Prim+Delay\_Sec) \times \sum_{age\geq“15‒19”} { \sum_{gender} {SEG_{gender,age}(t)}}+
-        (Delay\_Prim+Delay\_Sec+Delay\_Tert) \times \sum_{age\geq“15‒19”} { \sum_{gender} {TEG_{gender,age}(t)}}
+        Dur\_Prim \times \sum_{age\geq“15‒19”} { \sum_{gender} {PEG_{gender,age}(t)}}+
+        (Dur\_Prim+Dur\_Sec) \times \sum_{age\geq“15‒19”} { \sum_{gender} {SEG_{gender,age}(t)}}+
+        (Dur\_Prim+Dur\_Sec+Dur\_Tert) \times \sum_{age\geq“15‒19”} { \sum_{gender} {TEG_{gender,age}(t)}}
     }
     {\sum_{age\geq“15‒19”} { \sum_{gender} {Pop_{gender,age}(t)}}}
 $$

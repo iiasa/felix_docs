@@ -8,5 +8,3 @@ description: the appendix section of felix
 ---
 
 Appendix for Felix
-
-1. [Nomenclature](10_nomenclature.md)
