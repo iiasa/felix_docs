@@ -5,7 +5,7 @@ nav_order: 1
 description: FeliX model documentation
 ---
 
-FeliX is a global system dynamics model of climate, economy, environment and society interactions. 
+FeliX is a global system dynamics model of climate, economy, environment and society interactions developed at International Institute for Applied Systems Analysis [(IIASA)](https://iiasa.ac.at/models-tools-data/felix) first within the [GEO-BENE](https://geo-bene.project-archive.iiasa.ac.at/) project. 
 
 This site provides documentation for the FeliX model, provides brief overview of the underlying modeling methodology, and links to the FeliX resources and publications.
 
