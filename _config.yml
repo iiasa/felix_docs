@@ -17,3 +17,5 @@ aux_links_new_tab: true
 
 math: katex
 
+footer_content: "footer"
+
