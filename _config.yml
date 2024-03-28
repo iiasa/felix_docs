@@ -19,3 +19,5 @@ math: katex
 
 footer_content: "Copyright (c); 2024- IIASA/RU . This work is licensed under a <a href=\"http://creativecommons.org/licenses/by/4.0\">Creative Commons Attribution 4.0 International License</a>."
 
+google_analytics: "UA-158051792-1" # Google Analytics id, e.g. "UA-NNNNNNNN-N"
+
