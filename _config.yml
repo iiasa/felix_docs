@@ -7,7 +7,7 @@ url: ""
 # logo: "/images/iiasa_png logo_blue.png"
 
 search_enabled: false
-
+google_analytics: G-4NR9BJ5YPK
 aux_links:
   "FeliX model on GitHub":
     - "https://github.com/iiasa/Felix-Model"
