@@ -22,7 +22,7 @@ The main underlying driver of land use change is the food system, in addition to
 
 |[![](images/5_food_land_use.png)](images/5_food_land_use.png)
 |:--|
-|Figure 5.2. Stylized stock-flow diagram of land use module in FeliX.|
+|Figure 5.2. Stylized feedback loops driving the land use change in FeliX.|
 
 Agricultural land requirement increases due to the growing population and income levels which lead to more food demand (Figure 5.2). In Felix, agricultural land is further divided into three sub-categories as arable land, permanent cropland, and permanent meadows and pastures. Land use shifts due to food demand are considered based on plant- and animal-based food that have their own land allocation and yields. FeliX totally specifies eight categories of food products and sorts them into plant-based and animal-based food:
 - Plant-based food: pulses, grains, vegetables and fruits, and other crops such as sugar and oil crops
