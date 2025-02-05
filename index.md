@@ -18,5 +18,5 @@ methodology and links to the FeliX 2.0 resources and publications. https://iiasa
 - The FeliX methodoloy article:  Ye, Q., Liu, Q., Swamy, D., Gao, L., Moallemi, E. A., Rydzak, F., Eker, S., 2024. FeliX 2.0: An integrated model of climate, economy, environment, and society interactions. Environmental Modelling & Software 179, 106121. https://doi.org/10.1016/j.envsoft.2024.106121.
 
 *Contact Information*:
-- **Dr. Quanliang Ye**, quanliang.ye@ru.nl, Nijmegen School of Management, Radboud University, 6525 XZ, Nijmegen, the Netherlands.
+- **Dr. Quanliang Ye**, yequanliang@iiasa.ac.at, International Institute for Applied Systems Analysis (IIASA), Laxenburg, 2361, Austria
 - **Dr. Sibel Eker**, sibel.eker@ru.nl, Nijmegen School of Management, Radboud University, 6525 XZ, Nijmegen, the Netherlands / International Institute for Applied Systems Analysis (IIASA), Laxenburg, 2361, Austria
