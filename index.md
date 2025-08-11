@@ -19,4 +19,4 @@ methodology and links to the FeliX 2.0 resources and publications. https://iiasa
 
 *Contact Information*:
 - **Dr. Quanliang Ye**, yequanliang@iiasa.ac.at, International Institute for Applied Systems Analysis (IIASA), Laxenburg, 2361, Austria
-- **Dr. Sibel Eker**, sibel.eker@ru.nl, Nijmegen School of Management, Radboud University, 6525 XZ, Nijmegen, the Netherlands / International Institute for Applied Systems Analysis (IIASA), Laxenburg, 2361, Austria
+- **Dr. Sibel Eker**, eker@iiasa.ac.at, International Institute for Applied Systems Analysis (IIASA), Laxenburg, 2361, Austria
