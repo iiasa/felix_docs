@@ -9,9 +9,6 @@ The Full of Economic-Environment Linkages and Integration dX/dt (FeliX) is a glo
 
 This site is the online documentation for the FeliX model. Here, we provide overview of the underlying modeling methodology, and information to the FeliX resources and publications. The online documation is also supporting the methodology paper pulished as [Ye et al. *Environmental Modelling & Software* (2024)](https://doi.org/10.1016/j.envsoft.2024.106121).
 
-This online documentation is prepared by
-[Quanliang Ye](https://iiasa.ac.at/staff/quanliang-ye) and [Sibel Eker](https://iiasa.ac.at/staff/sibel-eker) with contributions from [Qi Liu](https://www.researchgate.net/profile/Qi-Liu-321) and [Deepthi Swamy](https://iiasa.ac.at/staff/deepthi-swamy). 
-
 *Suggested citations*:
 - This online page: Ye, Q., Eker, S., 2024. The FeliX 2.0 webpage: overview of the underlying modeling
 methodology and links to the FeliX 2.0 resources and publications. https://iiasa.github.io/felix_docs/.
