@@ -4,7 +4,7 @@ layout: default
 parent: Appendix
 nav_order: 2
 math: katex
-description: the Nomenclature of felix
+description: geographical classification of the regionalized felix
 ---
 
 # Geographical Classifications of FeliX Regions
