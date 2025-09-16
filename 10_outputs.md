@@ -1,5 +1,5 @@
 ---
-title: "10. Outputs of FeliX"
+title: "Outputs of FeliX"
 layout: default
 parent: Model Overview
 nav_order: 10
