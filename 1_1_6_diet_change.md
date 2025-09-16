@@ -1,7 +1,7 @@
 ---
 title: "6. Diet change"
 layout: default
-parent: Model Overview
+parent: Global FeliX
 nav_order: 6
 math: katex
 description: the diet change section of felix
