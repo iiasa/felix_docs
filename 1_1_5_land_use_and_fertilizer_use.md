@@ -1,7 +1,7 @@
 ---
 title: "5. Land use and fertilizer use"
 layout: default
-parent: Global FeliX
+parent: FeliX
 nav_order: 5
 math: katex
 description: the land use and fertilizer use section of felix

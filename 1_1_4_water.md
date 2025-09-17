@@ -1,7 +1,7 @@
 ---
 title: "4. Water"
 layout: default
-parent: Global FeliX
+parent: FeliX
 nav_order: 4
 math: katex
 description: the water section of felix
