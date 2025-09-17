@@ -8,6 +8,7 @@ description: geographical classification of the regionalized felix
 ---
 
 # Geographical Classifications of FeliX Regions
+This appendix provides the geographical classifications of five regions in the FeliX-R5.
 
 {: .note }
 >  **Lists of countries and/or economies in each region regionalized in FeliX**
