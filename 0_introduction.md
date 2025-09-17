@@ -47,11 +47,20 @@ FeliX is a system dynamics model that simulates complex interactions among diffe
 8. [Climate](1_1_8_climate.md)
 9. [Biodiversity](1_1_9_biodiversity.md)
 
-The model outcomes are determined by many interacting feedback loops within and between these systems as shown in Figure 3.
+The model is developed using the simulation software Vensim. The full functionality of FeliX requires the licensed DSS version of Vensim, whereas it can be displayed freely by using Vensim Model Reader. The user interface of FeliX on Vensim DSS is shown in Figure 3.
+
+|[![](images/vensim_user_interface.png)](images/vensim_user_interface.png)
+|:--|
+|Figure 3. The user interface of Vensim DSS software.|
+
+The model outcomes are determined by many interacting feedback loops within and between these systems as shown in Figure 4.
 
 |[![](images/overall_structure_felix.png)](images/overall_structure_felix.png)
 |:--|
-|Figure 3. Overview of the FeliX model. Education shows as a separate component from the population module. The trade module is only for the regionalized version of FeliX. Source: [Moallemi et al. (2022)](https://linkinghub.elsevier.com/retrieve/pii/S2590332222003244).|
+|Figure 4. Overview of the FeliX model. Education shows as a separate component from the population module. The trade module is only for the regionalized version of FeliX. Source: [Moallemi et al. (2022)](https://linkinghub.elsevier.com/retrieve/pii/S2590332222003244).|
+
+
+
 
 
 ## References
