@@ -1,7 +1,7 @@
 ---
 title: "9. Biodiversity"
 layout: default
-parent: Global FeliX
+parent: FeliX
 nav_order: 9
 math: katex
 description: the biodiversity section of felix

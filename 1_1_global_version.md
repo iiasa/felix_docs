@@ -1,5 +1,5 @@
 ---
-title: "Global FeliX"
+title: "FeliX"
 layout: default
 parent: Model Overview
 nav_order: 1

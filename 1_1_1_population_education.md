@@ -1,7 +1,7 @@
 ---
 title: "1. Population and education"
 layout: default
-parent: Global FeliX
+parent: FeliX
 nav_order: 1
 math: katex
 description: the population and education section of felix

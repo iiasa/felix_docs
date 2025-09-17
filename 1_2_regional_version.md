@@ -1,5 +1,5 @@
 ---
-title: "Regionalized FeliX"
+title: "FeliX—R5"
 layout: default
 parent: Model Overview
 nav_order: 2

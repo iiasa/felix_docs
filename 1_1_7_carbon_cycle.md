@@ -1,7 +1,7 @@
 ---
 title: "7. Carbon cycle"
 layout: default
-parent: Global FeliX
+parent: FeliX
 nav_order: 7
 math: katex
 description: the carbon cycle section of felix

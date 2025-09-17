@@ -1,7 +1,7 @@
 ---
 title: "1. Inter-regional Trade"
 layout: default
-parent: Regionalized FeliX
+parent: FeliX—R5
 nav_order: 1
 math: katex
 description: modelling inter-regional trade of felix
