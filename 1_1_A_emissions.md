@@ -1,0 +1,184 @@
+---
+title: "A. Emissions"
+layout: default
+parent: FeliX
+nav_order: A
+math: katex
+description: the emission section of felix
+---
+
+# A. Emissions
+FeliX models emissions of three major greenhouse gases: CO₂, CH₄, and N₂O. These emissions originate from four main sectors: (1) Agriculture, (2) LULUCF (Land Use, Land-Use Change, and Forestry), (3) Energy, and (4) Industry & Waste.
+
+FeliX uses an **activity-based emission accounting approach**, in which it estimates emissions indirectly from activities and outputs across different sectors through emission factors. Emission factors ($EF^{Gas}_{Activity}$) are determined in this order of priorities: (1) IPCC default values, (2) Historical data calculations, (3) Model calibration.
+
+$$
+Emis_{Activity}^{Gas}(t) = Activity(t)\times EF^{Gas}_{Activity}, 
+\quad Gas \in \{CO_2,CH_4, N_2O\}     
+\quad \text{(Eq. A1)}
+$$
+
+The key activities contributing to the various emissions are described in Table A.1. Categories of activities from Agriculture, LULUCF and Industry & Waste are based on FAOSTAT (2025), while Energy sector activities follow IEA (2025) guidelines. Emissions for individual activities are likewise calibrated from these sources, while aggregated emissions for each gas are calibrated using data from the RCMIP protocol (Nicholls et al., 2019).
+
+Table A.1: Sector, Activity, and Greenhouse Gas Emission Contributions.
+| **Sector**         | **Activity**              | **CO₂** | **CH₄** | **N₂O** | **Equation** |
+|--------------------|---------------------------|:------:|:------:|:------:|:------:|
+| **Agriculture**    | Livestock & Manure        |        | 🟢     | 🔵     | A.2    |
+|                    | Rice Cultivation          |        | 🟢     |        | A.3    |
+|                    | Crop Residue Burning      |        | 🟢     | 🔵     | A.4    |
+|                    | Agricultural Soils        |        |        | 🔵     | A.5    |
+| **LULUCF**         | Burning Biomass           | 🔴     | 🟢     | 🔵     | A.6    |
+|                    | Net Forest Conversion     | 🔴     |        |        | A.7    |
+|                    | Forestland                | 🔴     |        |        | A.8    |
+|                    | Drained Organic Soils     | 🔴     |        |        | A.9    |
+| **Energy**         | Oil Production            | 🔴     | 🟢     | 🔵     | A.10-12  |
+|                    | Coal Production           | 🔴     | 🟢     | 🔵     | A.10-12  |
+|                    | Gas Production            | 🔴     | 🟢     | 🔵     | A.10-12  |
+|                    | Biomass Production        | 🔴     | 🟢     | 🔵     | A.10-12  |
+|                    | Solar Production          | 🔴     |        |        | A.10-12   |
+|                    | Wind Production           | 🔴     |        |        | A.10-12   |
+| **Industry & Waste** | Waste Disposal          |        | 🟢     |        | A.13   |
+|                    | Industrial Activity       |        |        | 🔵     | A.14   |
+
+
+<!-- Agricultural and LULUCF Activities utilize variables from the [Land Use Module](1_1_5_land_use_and_fertilizer_use.md)-->
+
+## A.1 Agriculture Emissions 
+<!--Sector-->
+Agriculture activities contribute primarily to $CH_4$ and $N_2O$ emissions. FeliX quantifies agricultural emissions are based on production rate of various food items (see [Land Use and Fertilizer Use Module](1_1_5_land_use_and_fertilizer_use.md)). Even the emission formula from agricultural soils ($Emis_{AgricultureSoils}^{N2O}$) which are based on IPCC (2006a) guidelines, are derived from nitrogen flows ($N$), which themselves are calculated using the production rates of animal-based food.
+
+$$
+Emis_{LivestockManure}^{Gas}(t) = \sum_{AnimalFood} Production_{AnimalFood}(t) \times EF^{Gas}_{LivestockManure} \times \frac{1}{Yield(t)} , 
+\quad Gas \in \{CH_4, N_2O\}
+\quad \text{(Eq. A2)}
+$$
+
+$$
+Emis_{RiceCultivation}^{CH4}(t) = Production_{Grains}(t) \times EF_{RiceCultivation}^{CH_4}
+\quad \text{(Eq. A3)}
+$$
+
+$$
+Emis_{CropBurning}^{Gas}(t) = \sum_{PlantFood}Production_{PlantFood}(t) \times Residue\_to\_Production \times EF^{Gas}_{CropBurning}, 
+\quad Gas \in \{CH_4, N_2O\}
+\quad \text{(Eq. A4)}
+$$
+
+$$
+Emis_{AgricultureSoils}^{N2O}(t) =
+N_{Commercial}(t) \times EF_{Direct} +
+N_{Manure}(t) \times EF_{Volatilization} +
+N_{Leaching}(t) \times EF_{Leaching}
+\quad \text{(Eq. A5)}
+$$
+
+where emission factors $EF^{Gas}_{LivestockManure}$, $EF^{Gas}_{RiceCultivation}$, and $EF^{Gas}_{CropBurning}$ were calculated from historical data in FAOSTAT based on the same relationship. For $EF^{Gas}_{LivestockManure}$, where the relationship between production and emissions was not linear due to productivity changes, an adjustment factor ($\frac{1}{Yield(t)}$) was introduced since emissions tend to be tied to animal heads rather than production rate (IPCC, 2006b).
+
+## A.2 LULUCF Emissions
+Land Use, Land Use Change and Forestry (LULUCF) activities contribute primarily to $CO_2$ emissions, with minor contributions to $N_2O$ and $CH_4$ from biomass burning. FeliX quantifies LULUCF emissions based largely on forest land changes and agricultural land changes relative to initial year 1900 stocks ($\frac{ForestLand(t)}{ForestLand_0}$ and $\frac{AgriLand(t)}{AgriLand_0}$ respectively). See [Land Use and Fertilizer Use Module](1_1_5_land_use_and_fertilizer_use.md) for details on the drivers of land use changes.
+
+$$
+Emis_{NetForest}^{CO2}(t) = \frac{ForestLand(t)}{ForestLand_0} \times EF^{CO2}_{NetForest}, 
+\quad \text{(Eq. A6)}
+$$
+
+$$
+Emis_{ForestLand}^{CO2}(t) = ForestLand(t) \times EF^{CO2}_{ForestLand}, 
+\quad \text{(Eq. A7)}
+$$
+
+$$
+Emis_{BurningBiomass}^{Gas}(t) = \frac{AgriLand(t)}{AgriLand_0} \times Burnt Fraction \times EF^{Gas}_{BurningBiomass}, 
+\quad Gas \in \{CO_2, CH_4, N_2O\}
+\quad \text{(Eq. A8)}
+$$
+
+$$
+Emis_{DrainedSoils}^{Gas}(t) = \frac{AgriLand(t)}{AgriLand_0} \times EF^{Gas}_{DrainedSoils}, 
+\quad Gas \in \{CO_2, CH_4, N_2O\}
+\quad \text{(Eq. A9)}
+$$
+
+where all emission factors $EF^{CO2}_{NetForest}$, $EF^{CO2}_{ForestLand}$, $EF^{Gas}_{BurningBiomass}$ and $EF^{Gas}_{DrainedSoils}$ were all calibrated within the model using FAOSTAT (2025) emission data.
+
+## A.3 Energy Emissions
+Energy emissions contribute primarily to $CO_2$ emissions, with smaller contributions to $CH_4$ and $N_2O$. $CO_2$ is released from widespread fuel burning for electricity, heat, and transportation; $CH_4$ is emitted mostly from natural gas systems and coal mining; and $N_2O$ arises from certain combustion processes for fossil fuels. The energy sector supports various end uses, including industrial activities, agricultural production, residential and commercial energy use, and transportation.
+
+Emissions from the energy sector are based solely on the annual production rates of different fossil and renewable energy sources ($Prod_{Energy}$ in [Energy Module](1_1_3_energy.md)), including oil, coal, gas, biomass, solar, and wind. Carbon emissions from fossil fuels also include the effect of carbon capture and storage technology.
+
+$$
+Emis_{Energy}^{CO_2}(t) = \sum_{Energy} Prod_{Energy}(t) \times EF_{Energy}^{CO_2}, 
+\quad Energy \in \{Oil, Coal, Gas, Biomass, Solar, Wind\} \quad \text{(Eq. A10)}
+$$
+
+$$
+Emis_{Energy}^{CH_4}(t) = \sum_{Energy} Prod_{Energy}(t) \times EF_{Energy}^{CH_4}, 
+\quad Energy \in \{Oil, Coal, Gas, Biomass\}
+\quad \text{(Eq. A11)}
+$$
+
+$$
+Emis_{Energy}^{N_2O}(t) = \sum_{Energy} Prod_{Energy}(t) \times EF_{Energy}^{N_2O}, 
+\quad Energy \in \{Oil, Coal, Gas\}
+\quad \text{(Eq. A12)}
+$$
+
+where emission factors $EF_{Energy}^{CO_2}$, $EF_{Energy}^{CH_4}$, $EF_{Energy}^{N_2O}$ are calibrated to historical emissions within the uncertainty ranges of the unit emissions of energy production (IPCC, 2014).
+
+
+
+
+## A.4 Industry and Waste Emissions
+<!--Sector-->
+
+<!--Formula Explanation-->
+In FeliX, emissions from Industry and Waste are modeled indirectly through their relationship with Gross World Product (see $GWP$ in [Economy Module](1_1_2_economy.md)).
+
+**CH4 from Waste** emissions are calculated using the Municipal Solid Waste (MSW) disposal rate, which is estimated from GWP using the IPCC (2000) formulation:
+$$
+Emission_{Waste}^{CH_4}(t) = MSW(GWP)(t) \times EF_{Waste}^{CH_4}
+\quad \text{(Eq. A13)}
+$$
+where MSW is derived from a linear regression with GWP (gradient = 0.027, constant = 0.5695). The emission factor $EF_{Waste}^{CH_4}$ is calibrated within IPCC default uncertainty ranges, using a weighted average of different waste disposal site conditions.
+
+**N2O from Industry** emissions are calculated as:
+$$
+Emission_{Industrial}^{N_2O}(t) = Industrial\_Activity(t) \times EF_{Industrial}^{N_2O} \times Abatement\_Adoption(t)
+\quad \text{(Eq. A14)}
+$$
+where $Abatement\_Adoption(t)$ is modeled as a logistic curve from 1980-2000 with a maximum abatement fraction of 0.5, representing the gradual adoption of N2O abatement technologies. The emission factor $EF_{Industrial}^{N_2O}$ is calibrated using FAOSTAT (2025) emission data.
+
+
+## References
+- FAOSTAT (2025) *FAOSTAT Emissions Database*. Food and Agriculture Organization of the United Nations. Available at: https://www.fao.org/faostat/en/#data/GT.
+- IEA (2025) *IEA Emissions Explorer*. International Energy Agency. Available at: https://www.iea.org/data-and-statistics/data-tools/emissions-explorer.
+- IPCC (2000) 'Good Practice Guidance and Uncertainty Management in National Greenhouse Gas Inventories: CH4 Emissions from Solid Waste Disposal', *Background Papers*. Available at: https://www.ipcc-nggip.iges.or.jp/public/gp/bgp/5_1_CH4_Solid_Waste.pdf.
+- IPCC (2006a) 'Guidelines for National Greenhouse Gas Inventories, Volume 4: Agriculture, Forestry and Other Land Use, Chapter 11: N2O Emissions from Managed Soils, and CO2 Emissions from Lime and Urea Application'. Available at: https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/4_Volume4/V4_11_Ch11_N2O&CO2.pdf
+- IPCC (2006b) 'Guidelines for National Greenhouse Gas Inventories, Volume 4: Agriculture, Forestry and Other Land Use, Chapter 10: Emissions from Livestock and Manure Management'. Available at: https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/4_Volume4/V4_10_Ch10_Livestock.pdf.
+- IPCC (2014) *Climate Change 2014: Mitigation of Climate Change. Contribution of Working Group III to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change*. Cambridge University Press.
+
+<!--
+$$
+CO2_{total}(t) =
+    CO2_{LULUCF}(t) +
+    CO2_{Energy}(t)
+    \quad \text{(Eq. 1)}
+$$
+
+$$
+CH4_{total}(t) =
+    CH4_{Agri}(t) +
+    CH4_{LULUCF}(t) +
+    CH4_{Energy}(t) +
+    CH4_{IndWaste}(t)
+    \quad \text{(Eq. 2)}
+$$
+
+$$
+N2O_{total}(t) =
+    N2O_{Agri}(t) +
+    N2O_{LULUCF}(t) +
+    N2O_{Energy}(t) +
+    N2O_{IndWaste}(t)
+    \quad \text{(Eq. 3)}
+$$
