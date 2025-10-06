@@ -48,18 +48,18 @@ Table A.1: Sector, Activity, and Greenhouse Gas Emission Contributions.
 Agriculture activities contribute primarily to $CH_4$ and $N_2O$ emissions. FeliX quantifies agricultural emissions are based on production rate of various food items (see [Land Use and Fertilizer Use Module](1_1_5_land_use_and_fertilizer_use.md)). Even the emission formula from agricultural soils ($Emis_{AgricultureSoils}^{N2O}$) which are based on IPCC (2006a) guidelines, are derived from nitrogen flows ($N$), which themselves are calculated using the production rates of animal-based food.
 
 $$
-Emis_{LivestockManure}^{Gas}(t) = \sum_{AnimalFood} Production_{AnimalFood}(t) \times EF^{Gas}_{LivestockManure} \times \frac{1}{Yield(t)} , 
+Emis_{LivestockManure}^{Gas}(t) = \sum_{AnimalFood} Prod_{AnimalFood}(t) \times EF^{Gas}_{LivestockManure} \times \frac{1}{Yield(t)} , 
 \quad Gas \in \{CH_4, N_2O\}
 \quad \text{(Eq. A2)}
 $$
 
 $$
-Emis_{RiceCultivation}^{CH4}(t) = Production_{Grains}(t) \times EF_{RiceCultivation}^{CH_4}
+Emis_{RiceCultivation}^{CH4}(t) = Prod_{Grains}(t) \times EF_{RiceCultivation}^{CH_4}
 \quad \text{(Eq. A3)}
 $$
 
 $$
-Emis_{CropBurning}^{Gas}(t) = \sum_{PlantFood}Production_{PlantFood}(t) \times Residue\_to\_Production \times EF^{Gas}_{CropBurning}, 
+Emis_{CropBurning}^{Gas}(t) = \sum_{PlantFood}Prod_{PlantFood}(t) \times Residue\_to\_Production \times EF^{Gas}_{CropBurning}, 
 \quad Gas \in \{CH_4, N_2O\}
 \quad \text{(Eq. A4)}
 $$
@@ -146,16 +146,17 @@ $$
 Emission_{Industrial}^{N_2O}(t) = Industrial\_Activity(t) \times EF_{Industrial}^{N_2O} \times Abatement\_Adoption(t)
 \quad \text{(Eq. A14)}
 $$
-where $Abatement\_Adoption(t)$ is modeled as a logistic curve from 1980-2000 with a maximum abatement fraction of 0.5, representing the gradual adoption of N2O abatement technologies. The emission factor $EF_{Industrial}^{N_2O}$ is calibrated using FAOSTAT (2025) emission data.
+where $Abatement\_Adoption(t)$ is modeled as a logistic curve from 1980-2000 with a maximum abatement fraction of 0.8, representing the gradual adoption of N2O abatement technologies. The emission factor $EF_{Industrial}^{N_2O}$ is calibrated using FAOSTAT (2025) emission data.
 
 
 ## References
-- FAOSTAT (2025) *FAOSTAT Emissions Database*. Food and Agriculture Organization of the United Nations. Available at: https://www.fao.org/faostat/en/#data/GT.
-- IEA (2025) *IEA Emissions Explorer*. International Energy Agency. Available at: https://www.iea.org/data-and-statistics/data-tools/emissions-explorer.
-- IPCC (2000) 'Good Practice Guidance and Uncertainty Management in National Greenhouse Gas Inventories: CH4 Emissions from Solid Waste Disposal', *Background Papers*. Available at: https://www.ipcc-nggip.iges.or.jp/public/gp/bgp/5_1_CH4_Solid_Waste.pdf.
-- IPCC (2006a) 'Guidelines for National Greenhouse Gas Inventories, Volume 4: Agriculture, Forestry and Other Land Use, Chapter 11: N2O Emissions from Managed Soils, and CO2 Emissions from Lime and Urea Application'. Available at: https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/4_Volume4/V4_11_Ch11_N2O&CO2.pdf
-- IPCC (2006b) 'Guidelines for National Greenhouse Gas Inventories, Volume 4: Agriculture, Forestry and Other Land Use, Chapter 10: Emissions from Livestock and Manure Management'. Available at: https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/4_Volume4/V4_10_Ch10_Livestock.pdf.
-- IPCC (2014) *Climate Change 2014: Mitigation of Climate Change. Contribution of Working Group III to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change*. Cambridge University Press.
+- FAO, 2025. FAOSTAT Emissions Total. https://www.fao.org/faostat/en/#data/GT.
+- IEA, 2025. Data and Statistics. https://www.iea.org/data-and-statistics/data-sets.
+- IPCC, 2000. Good Practice Guidance and Uncertainty Management in National Greenhouse Gas Inventories: CH4 Emissions from Solid Waste Disposal. IPCC/OECD/IEA/IGES, Hayama, Japan.
+- IPCC, 2006a. Guidelines for National Greenhouse Gas Inventories, Volume 4: Agriculture, Forestry and Other Land Use, Chapter 11: N2O Emissions from Managed Soils, and CO2 Emissions from Lime and Urea Application. IGES, Japan.
+- IPCC, 2006b. Guidelines for National Greenhouse Gas Inventories, Volume 4: Agriculture, Forestry and Other Land Use, Chapter 10: Emissions from Livestock and Manure Management. IGES, Japan.
+- IPCC, 2014. Climate Change 2014: Mitigation of Climate Change. Contribution of Working Group III to the Fifth Assessment Report. Cambridge University Press, Cambridge, UK.
+- Nicholls, Z. R. J., Meinshausen, M., Lewis, J., Gieseke, R., Dommenget, D., Dorheim, K., Fan, C.-S., Fuglestvedt, J. S., Gasser, T., Golüke, U., Goodwin, P., Hartin, C., Hope, A. P., Kriegler, E., Leach, N. J., Marchegiani, D., McBride, L. A., Quilcaille, Y., Rogelj, J., Salawitch, R. J., Samset, B. H., Sandstad, M., Shiklomanov, A. N., Skeie, R. B., Smith, C. J., Smith, S., Tanaka, K., Tsutsui, J., and Xie, Z., 2020. Reduced Complexity Model Intercomparison Project Phase 1: introduction and evaluation of global-mean temperature response. Geosci. Model Dev., 13, 5175–5190. https://doi.org/10.5194/gmd-13-5175-2020
 
 <!--
 $$
