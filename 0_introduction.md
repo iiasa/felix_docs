@@ -42,10 +42,12 @@ FeliX is a system dynamics model that simulates complex interactions among diffe
 3. [Energy](1_1_3_energy.md)
 4. [Water](1_1_4_water.md)
 5. [Land use and fertilizer use](1_1_5_land_use_and_fertilizer_use.md)
-6. [Diet change](1_1_6_diet_change.md)
-7. [Carbon cycle](1_1_7_carbon_cycle.md)
-8. [Climate](1_1_8_climate.md)
-9. [Biodiversity](1_1_9_biodiversity.md)
+6. [Biodiversity](1_1_6_biodiversity.md)
+7. [Diet change](1_1_7_diet_change.md)
+8. [Nutrition](1_1_8_nutrition.md)
+9. [Emissions](1_1_9_emissions.md)
+10. [Gaseous cycles](1_1_10_gaseous_cycles.md)
+11. [Climate](1_1_11_climate.md)
 
 The model is developed using the simulation software Vensim. The full functionality of FeliX requires the licensed DSS version of Vensim, whereas it can be displayed freely by using Vensim Model Reader. The user interface of FeliX on Vensim DSS is shown in Figure 3.
 
