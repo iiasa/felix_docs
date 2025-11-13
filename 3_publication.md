@@ -19,7 +19,7 @@ In summary, FeliX has facilitated vital research on global system dynamics, sust
 
 Below is a full list of peer-reviewed publications and reports with the FeliX model:
 
-## Peer-reviewed journal articles (chronolofical order)
+## Peer-reviewed journal articles (chronological order)
 
 - Yang J., Gao L., Guo Z., et al., **2025** [Integrative Sustainable Development Goal policy portfolios to accelerate global progress towards a more sustainable future: a modelling study](https://doi.org/10.1016/j.lanplh.2025.101318). *Lancet Planetary Health*.
 
