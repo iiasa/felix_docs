@@ -1,7 +1,7 @@
 ---
 title: "1. Population and education"
 layout: default
-parent: Model Overview
+parent: FeliX
 nav_order: 1
 math: katex
 description: the population and education section of felix
@@ -49,7 +49,7 @@ $$
 
 (Eq. 1.2)
 
-where g_{gender} denotes the birth gender fraction, i.e., gender fraction of registered newborns. $$Fert_{age}$$ refers to the age-specific fertility rate, which is the number of births per woman in a particular age group during a 5-year period. $$Fert_{age}$$ is formulated as a function of total fertility ($$Tot\_Fert$$).
+where $$g_{gender}$$ denotes the birth gender fraction, i.e., gender fraction of registered newborns. $$Fert_{age}$$ refers to the age-specific fertility rate, which is the number of births per woman in a particular age group during a 5-year period. $$Fert_{age}$$ is formulated as a function of total fertility ($$Tot\_Fert$$).
 
 $$
 Fert_{age}(t)=

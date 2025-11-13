@@ -1,7 +1,7 @@
 ---
 title: "3. Energy"
 layout: default
-parent: Model Overview
+parent: FeliX
 nav_order: 3
 math: katex
 description: the energy section of felix

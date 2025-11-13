@@ -1,7 +1,7 @@
 ---
-title: "10. Outputs of FeliX"
+title: "Outputs of FeliX"
 layout: default
-parent: Model Overview
+parent: FeliX
 nav_order: 10
 math: katex
 description: the outputs section of felix

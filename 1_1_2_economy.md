@@ -1,7 +1,7 @@
 ---
 title: "2. Economy"
 layout: default
-parent: Model Overview
+parent: FeliX
 nav_order: 2
 math: katex
 description: the economy section of felix
