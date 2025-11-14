@@ -10,10 +10,12 @@ description: the emission section of felix
 # 9. Emissions
 FeliX models emissions of three major greenhouse gases: CO₂, CH₄, and N₂O. These emissions originate from four main sectors: (1) Agriculture, (2) LULUCF (Land Use, Land-Use Change, and Forestry), (3) Energy, and (4) Industry & Waste.
 
-FeliX uses an **activity-based emission accounting approach**, in which it estimates emissions indirectly from activities and outputs across different sectors through emission factors. Emission factors ($EF^{Gas}_{Activity}$) are determined in this order of priorities: (1) IPCC default values, (2) Historical data calculations, (3) Model calibration.
+FeliX uses an **activity-based emission accounting approach** as described in Equation 9.1. It estimates emissions indirectly from activities and outputs across different sectors through emission factors. Emission factors ($EF^{Gas}_{Activity}$) are determined in this order of priorities: (1) IPCC default values, (2) Historical data calculations, (3) Model calibration.
+
+A dynamic abatement factor is included in the emission calculations to account for technological improvements that FeliX does not explicitly model. Since CH₄ and N₂O abatement technologies in Energy, Agriculture, Industry, and Waste sectors are expected to play a significant role in future emission trajectories, a logistic function is used to represent their gradual adoption over time. More details about this will be described in Section 9.5.
 
 $$
-Emis_{Activity}^{Gas}(t) = Activity(t)\times EF^{Gas}_{Activity}, 
+Emis_{Activity}^{Gas}(t) = Activity(t)\times EF^{Gas}_{Activity}\times Abatement^{Gas}_{Activity}(t), 
 \quad Gas \in \{CO_2,CH_4, N_2O\}     
 \quad \text{(Eq. 9.1)}
 $$
@@ -48,13 +50,13 @@ Table 9.1: Sector, Activity, and Greenhouse Gas Emission Contributions.
 Agriculture activities contribute primarily to $CH_4$ and $N_2O$ emissions. FeliX quantifies agricultural emissions are based on production rate of various food items (see [Land Use and Fertilizer Use Module](1_1_5_land_use_and_fertilizer_use.md)). Even the emission formula from agricultural soils ($Emis_{AgricultureSoils}^{N2O}$) which are based on IPCC (2006a) guidelines, are derived from nitrogen flows ($N$), which themselves are calculated using the production rates of animal-based food.
 
 $$
-Emis_{LivestockManure}^{Gas}(t) = \sum_{AnimalFood} Prod_{AnimalFood}(t) \times EF^{Gas}_{LivestockManure} \times \frac{1}{Yield(t)} , 
+Emis_{LivestockManure}^{Gas}(t) = \sum_{AnimalFood} Prod_{AnimalFood}(t) \times EF^{Gas}_{LivestockManure} \times \frac{1}{Yield(t)} \times Abatement^{Gas}_{Agriculture}(t), 
 \quad Gas \in \{CH_4, N_2O\}
 \quad \text{(Eq. 9.2)}
 $$
 
 $$
-Emis_{RiceCultivation}^{CH4}(t) = Prod_{Grains}(t) \times Grains\_to\_Rice\_Ratio \times EF_{RiceCultivation}^{CH_4}
+Emis_{RiceCultivation}^{CH4}(t) = Prod_{Grains}(t) \times Grains\_to\_Rice\_Ratio \times EF_{RiceCultivation}^{CH_4} \times Abatement^{CH_4}_{Agriculture}(t)
 \quad \text{(Eq. 9.3)}
 $$
 
@@ -66,9 +68,9 @@ $$
 
 $$
 Emis_{AgricultureSoils}^{N2O}(t) =
-N_{Commercial}(t) \times EF_{Direct} +
+\left(N_{Commercial}(t) \times EF_{Direct} +
 N_{Manure}(t) \times EF_{Volatilization} +
-N_{Leaching}(t) \times EF_{Leaching}
+N_{Leaching}(t) \times EF_{Leaching}\right) \times Abatement^{N_2O}_{Agriculture}(t)
 \quad \text{(Eq. 9.5)}
 $$
 
@@ -112,7 +114,7 @@ Emis_{Energy}^{CO_2}(t) = \sum_{Energy} Prod_{Energy}(t) \times EF_{Energy}^{CO_
 $$
 
 $$
-Emis_{Energy}^{CH_4}(t) = \sum_{Energy} Prod_{Energy}(t) \times EF_{Energy}^{CH_4}, 
+Emis_{Energy}^{CH_4}(t) = \sum_{Energy} Prod_{Energy}(t) \times EF_{Energy}^{CH_4} \times Abatement^{CH_4}_{Energy}(t), 
 \quad Energy \in \{Oil, Coal, Gas, Biomass\}
 \quad \text{(Eq. 9.11)}
 $$
@@ -126,28 +128,62 @@ $$
 where emission factors $EF_{Energy}^{CO_2}$, $EF_{Energy}^{CH_4}$, $EF_{Energy}^{N_2O}$ are calibrated to historical emissions within the uncertainty ranges of the unit emissions of energy production (IPCC, 2014).
 
 
-
-
 ## 9.4 Industry and Waste Emissions
 <!--Sector-->
 
 <!--Formula Explanation-->
-In FeliX, emissions from Industry and Waste are modeled indirectly through their relationship with Gross World Product (see $GWP$ in [Economy Module](1_1_2_economy.md)).
+In FeliX, emissions from Industry and Waste are modeled directly and indirectly through their relationship with Gross World Product (see $GWP$ in [Economy Module](1_1_2_economy.md)).
 
 **CH4 from Waste** emissions are calculated using the Municipal Solid Waste (MSW) disposal rate, which is estimated from GWP using the IPCC (2000) formulation:
 $$
-Emission_{Waste}^{CH_4}(t) = MSW(GWP)(t) \times EF_{Waste}^{CH_4}
+Emission_{Waste}^{CH_4}(t) = MSW(GWP)(t) \times EF_{Waste}^{CH_4} \times Abatement^{CH_4}_{Waste}(t)
 \quad \text{(Eq. 9.13)}
 $$
-where MSW is derived from a linear regression with GWP (gradient = 0.027, constant = 0.5695). The emission factor $EF_{Waste}^{CH_4}$ is calibrated within IPCC default uncertainty ranges, using a weighted average of different waste disposal site conditions.
+where MSW is derived from a linear regression with GWP (gradient = 0.027, constant = 0.5695). The emission factor $EF_{Waste}^{CH_4}$ is calibrated within IPCC default uncertainty ranges, using a weighted average of different waste disposal site conditions. This is calibrated with historical data from the RCMIP (2020).
 
 **N2O from Industry** emissions are calculated as:
 $$
-Emission_{Industrial}^{N_2O}(t) = Industrial\_Activity(t) \times EF_{Industrial}^{N_2O} \times Abatement\_Adoption(t)
+Emission_{Industrial}^{N_2O}(t) = GWP(t) \times EF_{Industrial}^{N_2O} \times Abatement^{N_2O}_{Industry}(t)
 \quad \text{(Eq. 9.14)}
 $$
-where $Abatement\_Adoption(t)$ is modeled as a logistic curve from 1980-2000 with a maximum abatement fraction of 0.8, representing the gradual adoption of N2O abatement technologies. The emission factor $EF_{Industrial}^{N_2O}$ is calibrated using FAOSTAT (2025b) emission data.
+where $EF_{Industrial}^{N_2O}$ represents the industrial emission factor in metric tons of N₂O per dollar of GWP. This is calibrated with historical data from RCMIP (2020).
 
+## 9.5 Abatement Fractions
+<figure>
+    <div style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:flex-start;">
+        <img src="images/9_Abatement_CH4_Energy.png" alt="CH4 energy abatement adoption fractions" style="flex:1 1 360px; max-width:600px;">
+        <img src="images/9_CH4_Fossil_Industrial.png" alt="CH4 waste and fossil industrial emissions after abatement" style="flex:1 1 360px; max-width:600px;">
+    </div>
+    <figcaption style="text-align:center; margin-top:6px;">
+        Figure 9.1. (Left) CH4 energy abatement adoption fractions across SSP scenarios (Ref=SSP2, Optimistic=SSP1, Pessimistic=SSP3). The observed differences is caused by the different maximum abatable fraction. (Right) Resultant CH4 waste and fossil industrial emissions after abatement, is reasonably consistent with other IAM trajectories.
+    </figcaption>
+</figure>
+
+Abatement factors account for technological improvements in emission reduction that FeliX does not explicitly model. Each abatement factor is a dimensionless value between 0 and 1, representing the fraction of baseline emissions that has been eliminated through technological advancement. For instance, an abatement factor of 0.8 indicates that 80% of baseline emissions have been abated, leaving only 20% of original emissions. 
+
+In FeliX, abatement factors are applied to the following emission sources:
+- **CH₄ from Energy** – methane emissions from fossil fuel production and combustion
+- **CH₄ from Agriculture** – methane emissions from livestock, manure, and rice cultivation
+- **CH₄ from Waste** – methane emissions from waste disposal
+- **N₂O from Agriculture** – nitrous oxide emissions from agricultural soils and crop burning
+- **N₂O from Industry** – nitrous oxide emissions from industrial processes
+
+The adoption of these technologies follows an S-shaped curve (logistic function) because real-world adoption starts slowly, accelerates during widespread deployment, then slows down again as it approaches the maximum achievable reduction. The key parameters are: $MaxFrac^{Gas}_{Activity}$, the maximum percentage of emissions that can be reduced; $MidYear^{Gas}_{Activity}$, the year when adoption reaches halfway to its maximum; and $Slope^{Gas}_{Activity}$, the steepness of the S-curve. SSP–RCP scenarios vary only the $MaxFrac^{Gas}_{Activity}$ and all other parameters are held constant.
+
+$$
+Abatement^{Gas}_{Activity}(t) = 1 - 
+\frac{MaxFrac^{Gas}_{Activity}}
+{1 + \exp\!\left[-Slope^{Gas}_{Activity}(t)\,\big(t - MidYear^{Gas}_{Activity}\big)\right]}
+\quad \text{(Eq. 9.15)}
+$$
+
+Unlike a standard logistic function with constant steepness, FeliX uses a **time-varying slope** that decreases over time (Eq. 9.16). This modification reflects that early adoption happens quickly when low-hanging fruit technologies are deployed, but the rate of adoption decelerates in later years as remaining emission reductions become progressively harder and more expensive to achieve (illustrated in Figure 9.1). This is formulated with a $Ramp$ function which gradually decreases the slope over time. 
+
+$$
+Slope^{Gas}_{Activity}(t) =
+Slope^{Gas}_{Activity}(0) - Ramp(Gradient, t_{start}, t_{end})
+\quad \text{(Eq. 9.16)}
+$$
 
 ## References
 - Dong, H., Mangino, J., McAllister, T.A., 2009. Emissions from Livestock and Manure Management. In: IPCC Guidelines for National Greenhouse Gas Inventories, Volume 4: Agriculture, Forestry and Other Land Use. IGES, Japan.
@@ -184,3 +220,4 @@ N2O_{total}(t) =
     N2O_{IndWaste}(t)
     \quad \text{(Eq. 3)}
 $$
+
