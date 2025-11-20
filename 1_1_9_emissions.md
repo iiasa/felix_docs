@@ -77,10 +77,10 @@ $$
 where emission factors $EF^{Gas}_{LivestockManure}$, $EF^{Gas}_{RiceCultivation}$, and $EF^{Gas}_{CropBurning}$ were calculated from historical data in FAOSTAT based on the same relationship. For $EF^{Gas}_{LivestockManure}$, where the relationship between production and emissions was not linear due to productivity changes, an adjustment factor ($\frac{1}{Yield(t)}$) was introduced since emissions tend to be tied to animal heads rather than production rate (Dong et al., 2009).
 
 ## 9.2 LULUCF Emissions
-Land Use, Land Use Change and Forestry (LULUCF) activities contribute primarily to $CO_2$ emissions, with minor contributions to $N_2O$ and $CH_4$ from biomass burning. FeliX quantifies LULUCF emissions based largely on forest land changes and agricultural land changes relative to initial year 1900 stocks ($\frac{ForestLand(t)}{ForestLand_0}$ and $\frac{AgriLand(t)}{AgriLand_0}$ respectively). See [Land Use and Fertilizer Use Module](1_1_5_land_use_and_fertilizer_use.md) for details on the drivers of land use changes.
+Land Use, Land Use Change and Forestry (LULUCF) activities contribute primarily to $CO_2$ emissions, with minor contributions to $N_2O$ and $CH_4$ from biomass burning. FeliX quantifies LULUCF emissions based largely on forest land changes and agricultural land changes relative to initial year 1900 stocks ($\frac{ForestLand(t)}{Init\_ForestLand}$ and $\frac{AgriLand(t)}{Init\_AgriLand}$ respectively). See [Land Use and Fertilizer Use Module](1_1_5_land_use_and_fertilizer_use.md) for details on the drivers of land use changes.
 
 $$
-Emis_{NetForest}^{CO2}(t) = \frac{ForestLand(t)}{ForestLand_0} \times EF^{CO2}_{NetForest}, 
+Emis_{NetForest}^{CO2}(t) = \frac{ForestLand(t)}{Init\_ForestLand} \times EF^{CO2}_{NetForest}, 
 \quad \text{(Eq. 9.6)}
 $$
 
@@ -90,13 +90,13 @@ Emis_{ForestLand}^{CO2}(t) = ForestLand(t) \times EF^{CO2}_{ForestLand},
 $$
 
 $$
-Emis_{BurningBiomass}^{Gas}(t) = \frac{AgriLand(t)}{AgriLand_0} \times Burnt Fraction \times EF^{Gas}_{BurningBiomass}, 
+Emis_{BurningBiomass}^{Gas}(t) = \frac{AgriLand(t)}{Init\_AgriLand} \times Burnt Fraction \times EF^{Gas}_{BurningBiomass}, 
 \quad Gas \in \{CO_2, CH_4, N_2O\}
 \quad \text{(Eq. 9.8)}
 $$
 
 $$
-Emis_{DrainedSoils}^{Gas}(t) = \frac{AgriLand(t)}{AgriLand_0} \times EF^{Gas}_{DrainedSoils}, 
+Emis_{DrainedSoils}^{Gas}(t) = \frac{AgriLand(t)}{Init\_AgriLand} \times EF^{Gas}_{DrainedSoils}, 
 \quad Gas \in \{CO_2, CH_4, N_2O\}
 \quad \text{(Eq. 9.9)}
 $$
@@ -134,14 +134,14 @@ where emission factors $EF_{Energy}^{CO_2}$, $EF_{Energy}^{CH_4}$, $EF_{Energy}^
 <!--Formula Explanation-->
 In FeliX, emissions from Industry and Waste are modeled directly and indirectly through their relationship with Gross World Product (see $GWP$ in [Economy Module](1_1_2_economy.md)).
 
-**CH4 from Waste** emissions are calculated using the Municipal Solid Waste (MSW) disposal rate, which is estimated from GWP using the IPCC (2000) formulation:
+**CH₄ from Waste** emissions are calculated using the Municipal Solid Waste (MSW) disposal rate, which is estimated from GWP using the IPCC (2000) formulation:
 $$
 Emission_{Waste}^{CH_4}(t) = MSW(GWP)(t) \times EF_{Waste}^{CH_4} \times Abatement^{CH_4}_{Waste}(t)
 \quad \text{(Eq. 9.13)}
 $$
 where MSW is derived from a linear regression with GWP (gradient = 0.027, constant = 0.5695). The emission factor $EF_{Waste}^{CH_4}$ is calibrated within IPCC default uncertainty ranges, using a weighted average of different waste disposal site conditions. This is calibrated with historical data from the RCMIP (2020).
 
-**N2O from Industry** emissions are calculated as:
+**N₂O from Industry** emissions are calculated as:
 $$
 Emission_{Industrial}^{N_2O}(t) = GWP(t) \times EF_{Industrial}^{N_2O} \times Abatement^{N_2O}_{Industry}(t)
 \quad \text{(Eq. 9.14)}
@@ -155,7 +155,7 @@ where $EF_{Industrial}^{N_2O}$ represents the industrial emission factor in metr
         <img src="images/9_CH4_Fossil_Industrial.png" alt="CH4 waste and fossil industrial emissions after abatement" style="flex:1 1 360px; max-width:600px;">
     </div>
     <figcaption style="text-align:center; margin-top:6px;">
-        Figure 9.1. (Left) CH4 energy abatement adoption fractions across SSP scenarios (Ref=SSP2, Optimistic=SSP1, Pessimistic=SSP3). The observed differences is caused by the different maximum abatable fraction. (Right) Resultant CH4 waste and fossil industrial emissions after abatement, is reasonably consistent with other IAM trajectories.
+        Figure 9.1. (Upper) CH₄ energy abatement adoption fractions across SSP scenarios (Ref=SSP2, Optimistic=SSP1, Pessimistic=SSP3). The observed differences is caused by the different maximum abatable fraction. (Lower) Resultant CH₄ waste and fossil industrial emissions after abatement, is reasonably consistent with other IAM trajectories.
     </figcaption>
 </figure>
 
@@ -168,7 +168,9 @@ In FeliX, abatement factors are applied to the following emission sources:
 - **N₂O from Agriculture** – nitrous oxide emissions from agricultural soils and crop burning
 - **N₂O from Industry** – nitrous oxide emissions from industrial processes
 
-The adoption of these technologies follows an S-shaped curve (logistic function) because real-world adoption starts slowly, accelerates during widespread deployment, then slows down again as it approaches the maximum achievable reduction. The key parameters are: $MaxFrac^{Gas}_{Activity}$, the maximum percentage of emissions that can be reduced; $MidYear^{Gas}_{Activity}$, the year when adoption reaches halfway to its maximum; and $Slope^{Gas}_{Activity}$, the steepness of the S-curve. SSP–RCP scenarios vary only the $MaxFrac^{Gas}_{Activity}$ and all other parameters are held constant.
+The adoption of these technologies is represented using a logistic function, consistent with well-established models of technology adoption and diffusion and aligned with historical patterns documented in the literature (Wilson, 2012). It captures the trend in which deployment starts slowly, speeds up as technologies scale, and then slows again as they reach their maximum potential.
+
+The key parameters of this function are: $MaxFrac^{Gas}_{Activity}$, the maximum percentage of emissions that can be reduced; $MidYear^{Gas}_{Activity}$, the year when adoption reaches halfway to its maximum; and $Slope^{Gas}_{Activity}$, the steepness of the S-curve. SSP–RCP scenarios vary only the $MaxFrac^{Gas}_{Activity}$ and all other parameters are held constant.
 
 $$
 Abatement^{Gas}_{Activity}(t) = 1 - 
@@ -177,7 +179,7 @@ Abatement^{Gas}_{Activity}(t) = 1 -
 \quad \text{(Eq. 9.15)}
 $$
 
-Unlike a standard logistic function with constant steepness, FeliX uses a **time-varying slope** that decreases over time (Eq. 9.16). This modification reflects that early adoption happens quickly when low-hanging fruit technologies are deployed, but the rate of adoption decelerates in later years as remaining emission reductions become progressively harder and more expensive to achieve (illustrated in Figure 9.1). This is formulated with a $Ramp$ function which gradually decreases the slope over time. 
+Unlike a standard logistic function with constant steepness, FeliX uses a **time-varying slope** that decreases over time (Eq. 9.16). This formula captures observed patterns in technological transitions, in which the upscaling and growth phases (i.e later stages) can speed up or slow down as deployment progresses. Representing this behaviour through a changing slope allows the model to reflect these shifts in momentum toward the final phases of adoption (illustrated in Figure 9.1). This is formulated with a $Ramp$ function which decreases the slope linearly over time. 
 
 $$
 Slope^{Gas}_{Activity}(t) =
@@ -194,7 +196,7 @@ $$
 - IPCC, 2006b. Guidelines for National Greenhouse Gas Inventories, Volume 4: Agriculture, Forestry and Other Land Use, Chapter 10: Emissions from Livestock and Manure Management. IGES, Japan.
 - IPCC, 2014. Climate Change 2014: Mitigation of Climate Change. Contribution of Working Group III to the Fifth Assessment Report. Cambridge University Press, Cambridge, UK.
 - Nicholls, Z. R. J., Meinshausen, M., Lewis, J., Gieseke, R., Dommenget, D., Dorheim, K., Fan, C.-S., Fuglestvedt, J. S., Gasser, T., Golüke, U., Goodwin, P., Hartin, C., Hope, A. P., Kriegler, E., Leach, N. J., Marchegiani, D., McBride, L. A., Quilcaille, Y., Rogelj, J., Salawitch, R. J., Samset, B. H., Sandstad, M., Shiklomanov, A. N., Skeie, R. B., Smith, C. J., Smith, S., Tanaka, K., Tsutsui, J., and Xie, Z., 2020. Reduced Complexity Model Intercomparison Project Phase 1: introduction and evaluation of global-mean temperature response. Geosci. Model Dev., 13, 5175–5190. https://doi.org/10.5194/gmd-13-5175-2020
-
+- Wilson, C., 2012. Up-scaling, formative phases, and learning in the historical diffusion of energy technologies. Energy Policy, 50, 81-94. https://doi.org/10.1016/j.enpol.2012.04.077.
 <!--
 $$
 CO2_{total}(t) =

@@ -33,7 +33,7 @@ $$
 RF_{Total}(t) = RF_{CO2}(t) + RF_{CH4}(t) + RF_{N2O}(t) + RF_{Others}(t) \quad \text{(Eq. 11.2)}
 $$
 
-**CO₂, N₂O, and CH₄ forcings**: The radiative forcing of each of these gases is calculated based on their atmospheric concentrations, as determined by the gaseous cycles module. The formulas are adapted from Meinshausen et al. (2020), which accounts for overlapping effects among the gases:
+**CO2, N2O, and CH4 forcings**: The radiative forcing of each of these gases is calculated based on their atmospheric concentrations, as determined by the gaseous cycles module. The formulas are adapted from Meinshausen et al. (2020), which accounts for overlapping effects among the gases:
 
 $$
 RF_{CO2}(t) = (a' + C_1 \sqrt{N(t)}) \cdot \ln\frac{C(t)}{C_0}
@@ -50,7 +50,7 @@ RF_{CH4}(t) = \left(a_3 \sqrt{M(t)} + b_3 \cdot (\sqrt{N(t)} + d_3)\right) \cdot
 \quad \text{(Eq. 11.5)}
 $$
 
-Where $C(t), N(t), M(t)$ are the atmospheric concentrations of CO₂, N₂O, and CH₄ at time $t$, and $C_0, N_0, M_0$ are their pre-industrial values. $a', a_2, b_2, c_2, d_2, a_3, b_3, d_3$ are coefficients which can be found in Table 3 of Meinshausen et al. (2020)
+Where $C(t), N(t), M(t)$ are the atmospheric concentrations of $CO_2$, $N_2O$ and $CH_4$ at time $t$, and $C_0, N_0, M_0$ are their pre-industrial values. $a', a_2, b_2, c_2, d_2, a_3, b_3, d_3$ are coefficients which can be found in Table 3 of Meinshausen et al. (2020)
 
 
 

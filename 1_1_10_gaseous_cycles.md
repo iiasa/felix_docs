@@ -18,11 +18,11 @@ $CO_2$ is modeled explicitly through exchanges with the atmosphere, biosphere, s
 
 The cycles of these gases are also interconnected in the atmosphere. Orange arrows in Figure 10.1 indicate key interactions: carbon fluxes from soil and biomass generate natural $CH_4$ emissions, linking the $CO_2$ and $CH_4$ cycles. Furthermore, the breakdown of $CH_4$ in the atmosphere produces carbon compounds, creating a feedback into the carbon cycle. 
 
-## 10.1. Carbon Cycle (CO₂/C)
+## 10.1. Carbon Cycle ($CO_2$)
 
 Stocks of carbon are considered in the atmosphere, biosphere, mixed ocean layer, and four deep ocean layers (Figure 10.1). Carbon in the atmosphere ($C\_Stk_{Atm}$) accumulates through total carbon emissions formulated above. Carbon in the biosphere is captured in biomass ($C\_Stk_{Biom}$) and soil ($C\_Stk_{Soil}$). $C\_Stk_{Biom}$ includes carbon stock in leaves, branches, stems, and roots, whereas $C\_Stk_{Soil}$ includes carbon stock in litter and humus. As the concentration of $C\_Stk_{Atm}$ rises, it forces an increase of the uptake by ocean and biosphere. Carbon flux from the atmosphere to the biomass is modeled according to the formula in Wullschleger et al. (1995) and grows logarithmically as the concentration of $C\_Stk_{Atm}$ increases. The residence of $C\_Stk_{Biom}$ depends on average lifespan. The outflow of $C\_Stk_{Biom}$ is partitioned between carbon flux from the biomass to the atmosphere and to the humus according to humification fraction. The outflow from $C\_Stk_{Soil}$ is equal to its content divided by its average lifespan in the humus. The flux between $C\_Stk_{Atm}$ and carbon stock in the mixed ocean layer ($C\_Stk_{Ocn}$) adjusts to an equilibrium that considers buffer factor, a measure of the resistance to atmospheric carbon dioxide being absorbed by the ocean surface layer. The buffer factor itself rises with the atmospheric concentration which decreases ocean absorption capacity. Deep ocean diffusion fluxes are modeled as a simple eddy-diffusion structure.
 
-## 10.2. Methane Cycle (CH$_4$)
+## 10.2. Methane Cycle ($CH_4$)
 
 Methane ($CH_4$) is modeled as a first-order impulse-response system with a single atmospheric stock. The system includes inflows from natural and anthropogenic emissions, while outflows occur through atmospheric breakdown with a chemical lifetime ($\tau_{CH_4} \approx 12$ years). 
 
@@ -42,17 +42,17 @@ $$
 Emis^{CH4}_{Natural}(t) = (C\_Flux_{Biom→CH4Atm} + C\_Flux_{Soil→CH4Atm}) \times Effect(TempChange(t))
 \quad \text{(Eq. 10.2)}
 $$
-where $Effect(TempChange(t))$ represents the impact of temperature change on biological CH$_4$ release.
+where $Effect(TempChange(t))$ represents the impact of temperature change on biological $CH_4$ release.
 
 **Methane Lifetime Dynamics:**
 $$
 \tau_{CH_4}(t) = \tau_0 \times Effect(TempChange(t)) \times Effect(\frac{N(t)}{N_0}, \frac{M(t)}{M_0})
 \quad \text{(Eq. 10.3)}
 $$
-where $\tau_0$ is the baseline lifetime, $Effect(TempChange(t))$ is the temperature-dependent scaling factor, and $Effect(\frac{N(t)}{N_0}, \frac{M(t)}{M_0})$ accounts for the influence of atmospheric N$_2$O and CH$_4$ concentrations. Formula is inspired by the FaIR Model (Leach et al., 2021) and calibrated in FeliX.
+where $\tau_0$ is the baseline lifetime, $Effect(TempChange(t))$ is the temperature-dependent scaling factor, and $Effect(\frac{N(t)}{N_0}, \frac{M(t)}{M_0})$ accounts for the influence of atmospheric $N_2O$ and $CH_4$ concentrations. Formula is inspired by the FaIR Model (Leach et al., 2021) and calibrated in FeliX.
 
 
-## 10.3. Nitrous Oxide Cycle (N₂O)
+## 10.3. Nitrous Oxide Cycle ($N_2O$)
 
 Nitrous oxide ($N_2O$) is modeled as a first-order impulse-response system with a single atmospheric stock. The system includes inflows from natural and anthropogenic emissions, while outflows occur through stratospheric reactions with a chemical lifetime ($\tau_{N_2O} \approx 114$ years).
 
@@ -71,14 +71,14 @@ $$
 Emis^{N2O}_{Natural}(t) = Emis_0 \times Effect(TempChange(t))
 \quad \text{(Eq. 10.5)}
 $$
-where $Effect(TempChange(t))$ represents the impact of temperature change on biological N₂O release.
+where $Emis_0$ represents the baseline emissions and $Effect(TempChange(t))$ represents the impact of temperature change on biological $N_2O$ release.
 
 **Nitrous Oxide Lifetime Dynamics:**
 $$
 \tau_{N_2O}(t) = \tau_0 \times Effect(N2O\_Stk(t))
 \quad \text{(Eq. 10.6)}
 $$
-where $\tau_0$ is the baseline lifetime, and $Effect(N2O\_Stk(t))$ is a scaling factor that grows exponentially with atmospheric N₂O concentration. Formula is adapted from the FaIR model (Leach et al., 2021) and calibrated in FeliX.
+where $\tau_0$ is the baseline lifetime, and $Effect(N2O\_Stk(t))$ is a scaling factor that grows exponentially with atmospheric $N_2O$ concentration. Formula is adapted from the FaIR model (Leach et al., 2021) and calibrated in FeliX.
 
 
 
