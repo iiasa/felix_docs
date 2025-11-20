@@ -1,13 +1,13 @@
 ---
-title: "6. Diet change"
+title: "7. Diet change"
 layout: default
 parent: FeliX
-nav_order: 6
+nav_order: 7
 math: katex
 description: the diet change section of felix
 ---
 
-# 6. Diet change
+# 7. Diet change
 Food demand is quantified based on the total caloric demand for eight main food categories. Total caloric demand is based on dietary choices of different population segments. Population segments of dietary choices are represented by the followers of the meat-based and vegetarian diets for each age cohort and gender (Eker et al., 2019). The shifts between these two dietary choices depend on income (represented by $$GWP\_per\_Cap$$) and social and behavioral factors such as climate and health risk perception, self-efficacy and social norms that underly pro-environmental behavior.
 
 Followers of meat-based and vegetarian diets are assumed to eat a standard mix of eight food categories. We used typical United States’ diets (Pimentel and Pimentel, 2003), a reference world diet and the global average supply statistics, as benchmarks to understand how meat-based and vegetarian diets differ globally. Based on such proportional differences of meat-based and vegetarian diets, we form the reference meat-based and vegetarian diets by decomposing the world’s average diet according to the population fraction of the two groups. Besides reference diets, we also built flexibility in the model to run scenario analyses with flexitarian, healthy-eating, and vegan diets (Springmann et al. 2018).
@@ -20,7 +20,7 @@ Cal\_Dem_{food}(t) =
     Intk\_Veg_{food} \times Pop\_Veg(t) + Intk\_Meat_{food} \times Pop\_Meat(t), \text{ where } food \in [\text{pulses, grains, vegetables and fruits, other crops}]   
 $$
 
-(Eq. 6.1)
+(Eq. 7.1)
 
 where $$Intk\_Veg$$ and $$Intk\_Meat$$ are the annual per-capita intake of plant-based calories in the vegetarian diet and meat-based diet, respectively. Both are assumed as a constant fraction of the annual total caloric intake per capita ($$Intk\_Tot$$).
 
@@ -28,13 +28,13 @@ $$
 Intk\_Veg(t) = \varphi\_Veg \times Intk\_Tot(t)
 $$
 
-(Eq. 6.2)
+(Eq. 7.2)
 
 $$
 Intk\_Meat(t) = \varphi\_Meat \times Intk\_Tot(t)
 $$
 
-(Eq. 6.3)
+(Eq. 7.3)
 
 $$Intk\_Tot$$ is formulated as the multiplication of a reference intake per capita ($$Intk\_Tot\_Ref$$) and the effect of income ($$Imp\_GWP\_on\_Cal$$). 
 
@@ -42,7 +42,7 @@ $$
 Intk\_Tot(t) = Intk\_Tot\_Ref \times Imp\_GWP\_on\_Cal(t)
 $$
 
-(Eq. 6.4)
+(Eq. 7.4)
 
 
 $$Imp\_GWP\_on\_Cal$$ is a logistic function based on $$GWP\_per\_Cap$$. 
@@ -54,13 +54,13 @@ Cal\_Dem_{food}(t) =
     Intk\_Meat_{food} \times Pop\_Meat(t), \text{ where } food \in [\text{pasture-based meat, crop-based meat, dairy, eggs}]   
 $$
 
-(Eq. 6.5)
+(Eq. 7.5)
 
 where $$Intk\_Meat$$ is the annual per-capita intake of meat-based calories in the meat-based diet. 
 
-It is important to note that Eqs. Eq. 6.1-6.5 are actually defined for each gender and age group, since caloric intake depends on age and gender. $$Intk\_Tot$$ is adjusted for each age cohort and gender based on the estimated calorie needs for moderate activity level. The heterogeneity for physical activity levels, however, is not included because the moderate level represents the average of various activity and consumption levels. 
+It is important to note that Eqs. Eq. 7.1-7.5 are actually defined for each gender and age group, since caloric intake depends on age and gender. $$Intk\_Tot$$ is adjusted for each age cohort and gender based on the estimated calorie needs for moderate activity level. The heterogeneity for physical activity levels, however, is not included because the moderate level represents the average of various activity and consumption levels. 
 
-## 6.2 Food demand and food production
+## 7.2 Food demand and food production
 Food demand ($$Food\_Dem_{food}$$) is calculated as $$Cal\_Dem_{food}$$ divided by the caloric value of associated food category. In addition, plant-based food categories can also be used as livestock feed. The amount of plant-based food used for feed depends on crop-based meat demand, feed share of four plant-based food, and unit-feed requirement for livestock. Food production ($$Prod_{food}$$) is eventually steered by waste-adjusted food demand, which is calculated as $$Food\_Dem_{food}$$ divided by a waste fraction ($$\varphi\_Wst$$) of supply.
 
 $$
@@ -69,7 +69,7 @@ Prod_{food}(t) = \frac
     {1-\varphi\_Wst}
 $$
 
-(Eq. 6.6)
+(Eq. 7.6)
 
 $$\varphi\_Wst$$ is set as 0.30 for grains, 45% for pulses, vegetables and fruits the waste fraction is 45%, and 20% for other food categories.
 
