@@ -155,7 +155,7 @@ where $EF_{Industrial}^{N_2O}$ represents the industrial emission factor in metr
         <img src="images/9_CH4_Fossil_Industrial.png" alt="CH4 waste and fossil industrial emissions after abatement" style="flex:1 1 360px; max-width:600px;">
     </div>
     <figcaption style="text-align:center; margin-top:6px;">
-        Figure 9.1. (Upper) CH₄ energy abatement adoption fractions across SSP scenarios (Ref=SSP2, Optimistic=SSP1, Pessimistic=SSP3). The observed differences is caused by the different maximum abatable fraction. (Lower) Resultant CH₄ waste and fossil industrial emissions after abatement, is reasonably consistent with other IAM trajectories.
+        Figure 9.1. (Upper) CH₄ energy abatement adoption fractions across SSP-RCP scenarios (Ref=SSP2-4.5, Optimistic=SSP1-2.6, Pessimistic=SSP3-7.0). The observed differences is caused by the different maximum abatable fraction. (Lower) Resultant CH₄ waste and fossil industrial emissions after abatement, is reasonably consistent with other IAM trajectories.
     </figcaption>
 </figure>
 
