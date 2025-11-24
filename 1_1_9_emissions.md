@@ -23,6 +23,7 @@ $$
 The key activities contributing to the various emissions are described in Table 9.1. Categories of activities from Agriculture, LULUCF and Industry & Waste are based on FAOSTAT (2025), while Energy sector activities follow IEA (2025) guidelines. Emissions for individual activities are likewise calibrated from these sources, while aggregated emissions for each gas are calibrated using data from the RCMIP protocol (Nicholls et al., 2019).
 
 Table 9.1: Sector, Activity, and Greenhouse Gas Emission Contributions.
+
 | **Sector**         | **Activity**              | **CO₂** | **CH₄** | **N₂O** | **Equation** |
 |--------------------|---------------------------|:------:|:------:|:------:|:------:|
 | **Agriculture**    | Livestock & Manure        |        | 🟢     | 🔵     | 9.2    |
