@@ -8,14 +8,14 @@ description: the climate section of felix
 ---
 
 # 11. Climate
-The climate module in FeliX is based on the C-ROADS model (Sterman et al., 2012), which in turn refers to FREE model (Fiddaman, 2002) and DICE model (Nordhaus, 1992). The Earth's radiation budget is constrained to the temperature change due to carbon dioxide ($CO_2$), methane ($CH_4$), nitrous oxide ($N_2O$), halocarbons and other forcings (e.g., aerosols, $O_3$, etc.). 
+The climate module in FeliX is based on the C-ROADS model (Sterman et al., 2012), which in turn refers to FREE model (Fiddaman, 2002) and DICE model (Nordhaus, 1992). The Earth's radiation budget is constrained to the temperature change due to carbon dioxide ($$CO_2$$), methane ($$CH_4$$), nitrous oxide ($$N_2O$$), halocarbons and other forcings (e.g., aerosols, $$O_3$$, etc.). 
 
 
 |[![](images/C_climate.png)](images/C_climate.png)
 |:--|
 |Figure 11.1. Energy Balance Model. Heat is exchanged among the atmosphere and upper ocean, and four deep ocean layers. The figure illustrates the different heat fluxes that drive the climate system in this model.
 
-As shown in Figure 11.1, the temperature change in the model is driven by three main mechanisms: radiative forcings from greenhouse gases, feedback cooling from outbound longwave radiation, and heat transfer between atmospheric-upper ocean and deep ocean layers. The temperature change ($TempChange$) is calculated as the ratio of current heat content in the atmosphere and upper ocean ($Heat_{AtmUpperOcn}$) to their combined heat capacity:
+As shown in Figure 11.1, the temperature change in the model is driven by three main mechanisms: radiative forcings from greenhouse gases, feedback cooling from outbound longwave radiation, and heat transfer between atmospheric-upper ocean and deep ocean layers. The temperature change ($$TempChange$$) is calculated as the ratio of current heat content in the atmosphere and upper ocean ($$Heat_{AtmUpperOcn}$$) to their combined heat capacity:
 
 $$
 TempChange = \frac{Heat_{AtmUpperOcn}}{HeatCapacity_{AtmUpperOcn}}
@@ -25,9 +25,9 @@ $$
 
 ## 11.1 Radiative Forcing
 
-In FeliX, temperature change is driven by forcings from $CO_2$, $CH_4$, and $N_2O$, computed based on atmospheric concentrations as described in [10. Gaseous cycles](1_1_10_gaseous_cycles.md). These three gases account for approximately 87% of total anthropogenic effective radiative forcing as of 2019, according to IPCC AR6 (IPCC, 2023). The remaining forcings are generated exogenously based on historical data and the future projections from Representative Concentration Pathways (RCPs) (Byers et al., 2022).
+In FeliX, temperature change is driven by forcings from $$CO_2$$, $$CH_4$$, and $$N_2O$$, computed based on atmospheric concentrations as described in [10. Gaseous cycles](1_1_10_gaseous_cycles.md). These three gases account for approximately 87% of total anthropogenic effective radiative forcing as of 2019, according to IPCC AR6 (IPCC, 2023). The remaining forcings are generated exogenously based on historical data and the future projections from Representative Concentration Pathways (RCPs) (Byers et al., 2022).
 
-**Total effective radiative forcing ($RF_{gas}$)** is the sum of the contributions from $CO_2$, $CH_4$, and $N_2O$ and other climate drivers:
+**Total effective radiative forcing ($$RF_{gas}$$)** is the sum of the contributions from $$CO_2$$, $$CH_4$$, and $$N_2O$$ and other climate drivers:
 
 $$
 RF_{Total}(t) = RF_{CO2}(t) + RF_{CH4}(t) + RF_{N2O}(t) + RF_{Others}(t) \quad \text{(Eq. 11.2)}
@@ -50,14 +50,14 @@ RF_{CH4}(t) = \left(a_3 \sqrt{M(t)} + b_3 \cdot (\sqrt{N(t)} + d_3)\right) \cdot
 \quad \text{(Eq. 11.5)}
 $$
 
-Where $C(t), N(t), M(t)$ are the atmospheric concentrations of $CO_2$, $N_2O$ and $CH_4$ at time $t$, and $C_0, N_0, M_0$ are their pre-industrial values. $a', a_2, b_2, c_2, d_2, a_3, b_3, d_3$ are coefficients which can be found in Table 3 of Meinshausen et al. (2020)
+Where $$C(t), N(t), M(t)$$ are the atmospheric concentrations of $$CO_2$$, $$N_2O$$ and $$CH_4$$ at time $$t$$, and $$C_0, N_0, M_0$$ are their pre-industrial values. $$a', a_2, b_2, c_2, d_2, a_3, b_3, d_3$$ are coefficients which can be found in Table 3 of Meinshausen et al. (2020)
 
 
 
 **Other forcings:** Forcings from halocarbons, aerosols, ozone, and other climate drivers are applied exogenously based on RCP projections. This formulation ensures that radiative forcing responds dynamically to the emissions of the primary greenhouse gases while maintaining consistency with established climate projections for secondary forcing agents.
 
 ## 11.2 Feedback cooling
-Feedback cooling due to outbound longwave radiation governs the feedback mechanism of the atmosphere and the upper ocean. The rate of cooling is determined by the climate sensitivity—a metric used to characterise the response of the global climate system to a given forcing. It is broadly defined as the equilibrium global mean surface temperature change following a doubling of atmospheric $CO_2$. This is estimated as 3°C based on IPCC AR4 (Hegerl et al., 2007).
+Feedback cooling due to outbound longwave radiation governs the feedback mechanism of the atmosphere and the upper ocean. The rate of cooling is determined by the climate sensitivity—a metric used to characterise the response of the global climate system to a given forcing. It is broadly defined as the equilibrium global mean surface temperature change following a doubling of atmospheric $$CO_2$$. This is estimated as 3°C based on IPCC AR4 (Hegerl et al., 2007).
 
 ## 11.3 Heat transfer
 The Energy Balance Model in FeliX tracks heat stocks between the atmosphere, the upper ocean, and four layers of the deep ocean. Heat transfer into the deeper ocean layers is modeled as a function of eddy diffusion, which also governs the movement of carbon through the deep ocean. FeliX represents four distinct deep-ocean layers: 100–200 m, 200–700 m, 700–2000 m, and 2000+ m.
