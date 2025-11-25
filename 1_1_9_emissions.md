@@ -10,7 +10,7 @@ description: the emission section of felix
 # 9. Emissions
 FeliX models emissions of three major greenhouse gases: CO₂, CH₄, and N₂O. These emissions originate from four main sectors: (1) Agriculture, (2) LULUCF (Land Use, Land-Use Change, and Forestry), (3) Energy, and (4) Industry & Waste.
 
-FeliX uses an **activity-based emission accounting approach** as described in Equation 9.1. It estimates emissions indirectly from activities and outputs across different sectors through emission factors. Emission factors ($EF^{Gas}_{Activity}$) are determined in this order of priorities: (1) IPCC default values, (2) Historical data calculations, (3) Model calibration.
+FeliX uses an **activity-based emission accounting approach** as described in Equation 9.1. It estimates emissions indirectly from activities and outputs across different sectors through emission factors. Emission factors ($$EF^{Gas}_{Activity}$$) are determined in this order of priorities: (1) IPCC default values, (2) Historical data calculations, (3) Model calibration.
 
 A dynamic abatement factor is included in the emission calculations to account for technological improvements that FeliX does not explicitly model. Since CH₄ and N₂O abatement technologies in Energy, Agriculture, Industry, and Waste sectors are expected to play a significant role in future emission trajectories, a logistic function is used to represent their gradual adoption over time. More details about this will be described in Section 9.5.
 
@@ -48,7 +48,7 @@ Table 9.1: Sector, Activity, and Greenhouse Gas Emission Contributions.
 
 ## 9.1 Agriculture Emissions 
 <!--Sector-->
-Agriculture activities contribute primarily to $CH_4$ and $N_2O$ emissions. FeliX quantifies agricultural emissions are based on production rate of various food items (see [Land Use and Fertilizer Use Module](1_1_5_land_use_and_fertilizer_use.md)). Even the emission formula from agricultural soils ($Emis_{AgricultureSoils}^{N2O}$) which are based on IPCC (2006a) guidelines, are derived from nitrogen flows ($N$), which themselves are calculated using the production rates of animal-based food.
+Agriculture activities contribute primarily to $$CH_4$$ and $$N_2O$$ emissions. FeliX quantifies agricultural emissions are based on production rate of various food items (see [Land Use and Fertilizer Use Module](1_1_5_land_use_and_fertilizer_use.md)). Even the emission formula from agricultural soils ($$Emis_{AgricultureSoils}^{N2O}$$) which are based on IPCC (2006a) guidelines, are derived from nitrogen flows ($$N$$), which themselves are calculated using the production rates of animal-based food.
 
 $$
 Emis_{LivestockManure}^{Gas}(t) = \sum_{AnimalFood} Prod_{AnimalFood}(t) \times EF^{Gas}_{LivestockManure} \times \frac{1}{Yield(t)} \times Abatement^{Gas}_{Agriculture}(t), 
@@ -75,10 +75,10 @@ N_{Leaching}(t) \times EF_{Leaching}\right) \times Abatement^{N_2O}_{Agriculture
 \quad \text{(Eq. 9.5)}
 $$
 
-where emission factors $EF^{Gas}_{LivestockManure}$, $EF^{Gas}_{RiceCultivation}$, and $EF^{Gas}_{CropBurning}$ were calculated from historical data in FAOSTAT based on the same relationship. For $EF^{Gas}_{LivestockManure}$, where the relationship between production and emissions was not linear due to productivity changes, an adjustment factor ($\frac{1}{Yield(t)}$) was introduced since emissions tend to be tied to animal heads rather than production rate (Dong et al., 2009).
+where emission factors $$EF^{Gas}_{LivestockManure}$$, $$EF^{Gas}_{RiceCultivation}$$, and $$EF^{Gas}_{CropBurning}$$ were calculated from historical data in FAOSTAT based on the same relationship. For $$EF^{Gas}_{LivestockManure}$$, where the relationship between production and emissions was not linear due to productivity changes, an adjustment factor ($$\frac{1}{Yield(t)}$$) was introduced since emissions tend to be tied to animal heads rather than production rate (Dong et al., 2009).
 
 ## 9.2 LULUCF Emissions
-Land Use, Land Use Change and Forestry (LULUCF) activities contribute primarily to $CO_2$ emissions, with minor contributions to $N_2O$ and $CH_4$ from biomass burning. FeliX quantifies LULUCF emissions based largely on forest land changes and agricultural land changes relative to initial year 1900 stocks ($\frac{ForestLand(t)}{Init\_ForestLand}$ and $\frac{AgriLand(t)}{Init\_AgriLand}$ respectively). See [Land Use and Fertilizer Use Module](1_1_5_land_use_and_fertilizer_use.md) for details on the drivers of land use changes.
+Land Use, Land Use Change and Forestry (LULUCF) activities contribute primarily to $$CO_2$$ emissions, with minor contributions to $$N_2O$$ and $$CH_4$$ from biomass burning. FeliX quantifies LULUCF emissions based largely on forest land changes and agricultural land changes relative to initial year 1900 stocks ($$\frac{ForestLand(t)}{Init\_ForestLand}$$ and $$\frac{AgriLand(t)}{Init\_AgriLand}$$ respectively). See [Land Use and Fertilizer Use Module](1_1_5_land_use_and_fertilizer_use.md) for details on the drivers of land use changes.
 
 $$
 Emis_{NetForest}^{CO2}(t) = \frac{ForestLand(t)}{Init\_ForestLand} \times EF^{CO2}_{NetForest}, 
@@ -102,12 +102,12 @@ Emis_{DrainedSoils}^{Gas}(t) = \frac{AgriLand(t)}{Init\_AgriLand} \times EF^{Gas
 \quad \text{(Eq. 9.9)}
 $$
 
-where all emission factors $EF^{CO2}_{NetForest}$, $EF^{CO2}_{ForestLand}$, $EF^{Gas}_{BurningBiomass}$ and $EF^{Gas}_{DrainedSoils}$ were all calibrated within the model using FAOSTAT (2025b) emission data.
+where all emission factors $$EF^{CO2}_{NetForest}$$, $$EF^{CO2}_{ForestLand}$$, $$EF^{Gas}_{BurningBiomass}$$ and $$EF^{Gas}_{DrainedSoils}$$ were all calibrated within the model using FAOSTAT (2025b) emission data.
 
 ## 9.3 Energy Emissions
-Energy emissions contribute primarily to $CO_2$ emissions, with smaller contributions to $CH_4$ and $N_2O$. $CO_2$ is released from widespread fuel burning for electricity, heat, and transportation; $CH_4$ is emitted mostly from natural gas systems and coal mining; and $N_2O$ arises from certain combustion processes for fossil fuels. The energy sector supports various end uses, including industrial activities, agricultural production, residential and commercial energy use, and transportation.
+Energy emissions contribute primarily to $$CO_2$$ emissions, with smaller contributions to $$CH_4$$ and $$N_2O$$. $$CO_2$$ is released from widespread fuel burning for electricity, heat, and transportation; $$CH_4$$ is emitted mostly from natural gas systems and coal mining; and $$N_2O$$ arises from certain combustion processes for fossil fuels. The energy sector supports various end uses, including industrial activities, agricultural production, residential and commercial energy use, and transportation.
 
-Emissions from the energy sector are based solely on the annual production rates of different fossil and renewable energy sources ($Prod_{Energy}$ in [Energy Module](1_1_3_energy.md)), including oil, coal, gas, biomass, solar, and wind. Carbon emissions from fossil fuels also include the effect of carbon capture and storage technology.
+Emissions from the energy sector are based solely on the annual production rates of different fossil and renewable energy sources ($$Prod_{Energy}$$ in [Energy Module](1_1_3_energy.md)), including oil, coal, gas, biomass, solar, and wind. Carbon emissions from fossil fuels also include the effect of carbon capture and storage technology.
 
 $$
 Emis_{Energy}^{CO_2}(t) = \sum_{Energy} Prod_{Energy}(t) \times EF_{Energy}^{CO_2}, 
@@ -126,28 +126,28 @@ Emis_{Energy}^{N_2O}(t) = \sum_{Energy} Prod_{Energy}(t) \times EF_{Energy}^{N_2
 \quad \text{(Eq. 9.12)}
 $$
 
-where emission factors $EF_{Energy}^{CO_2}$, $EF_{Energy}^{CH_4}$, $EF_{Energy}^{N_2O}$ are calibrated to historical emissions within the uncertainty ranges of the unit emissions of energy production (IPCC, 2014).
+where emission factors $$EF_{Energy}^{CO_2}$$, $$EF_{Energy}^{CH_4}$$, $$EF_{Energy}^{N_2O}$$ are calibrated to historical emissions within the uncertainty ranges of the unit emissions of energy production (IPCC, 2014).
 
 
 ## 9.4 Industry and Waste Emissions
 <!--Sector-->
 
 <!--Formula Explanation-->
-In FeliX, emissions from Industry and Waste are modeled directly and indirectly through their relationship with Gross World Product (see $GWP$ in [Economy Module](1_1_2_economy.md)).
+In FeliX, emissions from Industry and Waste are modeled directly and indirectly through their relationship with Gross World Product (see $$GWP$$ in [Economy Module](1_1_2_economy.md)).
 
 **CH₄ from Waste** emissions are calculated using the Municipal Solid Waste (MSW) disposal rate, which is estimated from GWP using the IPCC (2000) formulation:
 $$
 Emission_{Waste}^{CH_4}(t) = MSW(GWP)(t) \times EF_{Waste}^{CH_4} \times Abatement^{CH_4}_{Waste}(t)
 \quad \text{(Eq. 9.13)}
 $$
-where MSW is derived from a linear regression with GWP (gradient = 0.027, constant = 0.5695). The emission factor $EF_{Waste}^{CH_4}$ is calibrated within IPCC default uncertainty ranges, using a weighted average of different waste disposal site conditions. This is calibrated with historical data from the RCMIP (2020).
+where MSW is derived from a linear regression with GWP (gradient = 0.027, constant = 0.5695). The emission factor $$EF_{Waste}^{CH_4}$$ is calibrated within IPCC default uncertainty ranges, using a weighted average of different waste disposal site conditions. This is calibrated with historical data from the RCMIP (2020).
 
 **N₂O from Industry** emissions are calculated as:
 $$
 Emission_{Industrial}^{N_2O}(t) = GWP(t) \times EF_{Industrial}^{N_2O} \times Abatement^{N_2O}_{Industry}(t)
 \quad \text{(Eq. 9.14)}
 $$
-where $EF_{Industrial}^{N_2O}$ represents the industrial emission factor in metric tons of N₂O per dollar of GWP. This is calibrated with historical data from RCMIP (2020).
+where $$EF_{Industrial}^{N_2O}$$ represents the industrial emission factor in metric tons of N₂O per dollar of GWP. This is calibrated with historical data from RCMIP (2020).
 
 ## 9.5 Abatement Fractions
 <figure>
@@ -171,7 +171,7 @@ In FeliX, abatement factors are applied to the following emission sources:
 
 The adoption of these technologies is represented using a logistic function, consistent with well-established models of technology adoption and diffusion and aligned with historical patterns documented in the literature (Wilson, 2012). It captures the trend in which deployment starts slowly, speeds up as technologies scale, and then slows again as they reach their maximum potential.
 
-The key parameters of this function are: $MaxFrac^{Gas}_{Activity}$, the maximum percentage of emissions that can be reduced; $MidYear^{Gas}_{Activity}$, the year when adoption reaches halfway to its maximum; and $Slope^{Gas}_{Activity}$, the steepness of the S-curve. SSP–RCP scenarios vary only the $MaxFrac^{Gas}_{Activity}$ and all other parameters are held constant.
+The key parameters of this function are: $$MaxFrac^{Gas}_{Activity}$$, the maximum percentage of emissions that can be reduced; $$MidYear^{Gas}_{Activity}$$, the year when adoption reaches halfway to its maximum; and $$Slope^{Gas}_{Activity}$$, the steepness of the S-curve. SSP–RCP scenarios vary only the $$MaxFrac^{Gas}_{Activity}$$ and all other parameters are held constant.
 
 $$
 Abatement^{Gas}_{Activity}(t) = 1 - 
@@ -180,7 +180,7 @@ Abatement^{Gas}_{Activity}(t) = 1 -
 \quad \text{(Eq. 9.15)}
 $$
 
-Unlike a standard logistic function with constant steepness, FeliX uses a **time-varying slope** that decreases over time (Eq. 9.16). This formula captures observed patterns in technological transitions, in which the upscaling and growth phases (i.e later stages) can speed up or slow down as deployment progresses. Representing this behaviour through a changing slope allows the model to reflect these shifts in momentum toward the final phases of adoption (illustrated in Figure 9.1). This is formulated with a $Ramp$ function which decreases the slope linearly over time. 
+Unlike a standard logistic function with constant steepness, FeliX uses a **time-varying slope** that decreases over time (Eq. 9.16). This formula captures observed patterns in technological transitions, in which the upscaling and growth phases (i.e later stages) can speed up or slow down as deployment progresses. Representing this behaviour through a changing slope allows the model to reflect these shifts in momentum toward the final phases of adoption (illustrated in Figure 9.1). This is formulated with a $$Ramp$$ function which decreases the slope linearly over time. 
 
 $$
 Slope^{Gas}_{Activity}(t) =

@@ -2,7 +2,7 @@
 title: "Outputs of FeliX"
 layout: default
 parent: FeliX
-nav_order: 10
+nav_order: 12
 math: katex
 description: the outputs section of felix
 ---
