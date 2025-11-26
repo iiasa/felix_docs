@@ -38,17 +38,21 @@ CH4\_Stk_{Atm}(t+1) =
 $$
 
 **Natural Methane Emissions:**
+
 $$
 Emis^{CH4}_{Natural}(t) = (C\_Flux_{Biom→CH4Atm} + C\_Flux_{Soil→CH4Atm}) \times Effect(TempChange(t))
 \quad \text{(Eq. 10.2)}
 $$
+
 where $$Effect(TempChange(t))$$ represents the impact of temperature change on biological $$CH_4$$ release.
 
 **Methane Lifetime Dynamics:**
+
 $$
 \tau_{CH_4}(t) = \tau_0 \times Effect(TempChange(t)) \times Effect(\frac{N(t)}{N_0}, \frac{M(t)}{M_0})
 \quad \text{(Eq. 10.3)}
 $$
+
 where $$\tau_0$$ is the baseline lifetime, $$Effect(TempChange(t))$$ is the temperature-dependent scaling factor, and $$Effect(\frac{N(t)}{N_0}, \frac{M(t)}{M_0})$$ accounts for the influence of atmospheric $$N_2O$$ and $$CH_4$$ concentrations. Formula is inspired by the FaIR Model (Leach et al., 2021) and calibrated in FeliX.
 
 
@@ -57,6 +61,7 @@ where $$\tau_0$$ is the baseline lifetime, $$Effect(TempChange(t))$$ is the temp
 Nitrous oxide ($N_2O$) is modeled as a first-order impulse-response system with a single atmospheric stock. The system includes inflows from natural and anthropogenic emissions, while outflows occur through stratospheric reactions with a chemical lifetime ($\tau_{N_2O} \approx 114$ years).
 
 **Atmospheric Nitrous Oxide Stock:**
+
 $$
 N2O\_Stk_{Atm}(t+1) =
     N2O\_Stk_{Atm}(t) +
@@ -67,17 +72,21 @@ N2O\_Stk_{Atm}(t+1) =
 $$
 
 **Natural Nitrous Oxide Emissions:**
+
 $$
 Emis^{N2O}_{Natural}(t) = Emis_0 \times Effect(TempChange(t))
 \quad \text{(Eq. 10.5)}
 $$
+
 where $$Emis_0$$ represents the baseline emissions and $$Effect(TempChange(t))$$ represents the impact of temperature change on biological $$N_2O$$ release.
 
 **Nitrous Oxide Lifetime Dynamics:**
+
 $$
 \tau_{N_2O}(t) = \tau_0 \times Effect(N2O\_Stk(t))
 \quad \text{(Eq. 10.6)}
 $$
+
 where $$\tau_0$$ is the baseline lifetime, and $$Effect(N2O\_Stk(t))$$ is a scaling factor that grows exponentially with atmospheric $$N_2O$$ concentration. Formula is adapted from the FaIR model (Leach et al., 2021) and calibrated in FeliX.
 
 
