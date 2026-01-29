@@ -4,6 +4,7 @@ layout: default
 nav_order: 1
 description: FeliX model documentation
 ---
+To get updates about the FeliX model, subscribe to our **[newsletter](https://iiasa.us5.list-manage.com/subscribe/post?u=4a7b399fd5c39ff77e8f1e7dc&id=392b395289&f_id=00cbc2e1f0)**.
 
 The Full of Economic-Environment Linkages and Integration dX/dt (FeliX) is a global system dynamics model of climate, economy, environment and society interactions, developed at International Institute for Applied Systems Analysis ([IIASA](https://iiasa.ac.at/models-tools-data/felix)), first within the [GEO-BENE](https://geo-bene.project-archive.iiasa.ac.at/) project. 
 
