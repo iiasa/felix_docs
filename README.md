@@ -3,7 +3,7 @@
 This is the online documentation of the Full of Economic-Environment Linkages and Integration dX/dt (FeliX) model. 
 This repository is rendered as a website [here](https://iiasa.github.io/felix_docs/).
 
-To get updates about the FeliX model, subscribe to our newsletter [here](https://iiasa.us5.list-manage.com/subscribe/post?u=4a7b399fd5c39ff77e8f1e7dc&id=392b395289&f_id=00cbc2e1f0).
+To get updates about the FeliX model, subscribe to our **newsletter [here](https://iiasa.us5.list-manage.com/subscribe/post?u=4a7b399fd5c39ff77e8f1e7dc&id=392b395289&f_id=00cbc2e1f0)**.
 
 ## Contents
 
