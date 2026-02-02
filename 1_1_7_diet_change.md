@@ -62,6 +62,7 @@ It is important to note that Eqs. Eq. 7.1-7.5 are actually defined for each gend
 
 ## 7.2 Food demand and food production
 Food demand ($$Food\_Dem_{food}$$) is calculated as $$Cal\_Dem_{food}$$ divided by the caloric value of associated food category. In addition, plant-based food categories can also be used as livestock feed. The amount of plant-based food used for feed depends on crop-based meat demand, feed share of four plant-based food, and unit-feed requirement for livestock. Food demand ($$Food\_Dem_{food}$$) is calculated as annual caloric intake demand (\sum{Cal\_Dem_{food}}) divided by a waste fraction ($$\varphi\_Wst_{food}$$) of supply as below. Food production ($$Prod_{food}$$) is eventually steered by waste-adjusted food demand and the subsequent desired crop production that incldues feed demand. 
+
 $$
 Food\_Dem_{food}(t) = \frac
     {Cal\_Dem_{food}(t)}
