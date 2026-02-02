@@ -61,12 +61,11 @@ where $$Intk\_Meat$$ is the annual per-capita intake of meat-based calories in t
 It is important to note that Eqs. Eq. 7.1-7.5 are actually defined for each gender and age group, since caloric intake depends on age and gender. $$Intk\_Tot$$ is adjusted for each age cohort and gender based on the estimated calorie needs for moderate activity level. The heterogeneity for physical activity levels, however, is not included because the moderate level represents the average of various activity and consumption levels. 
 
 ## 7.2 Food demand and food production
-Food demand ($$Food\_Dem_{food}$$) is calculated as $$Cal\_Dem_{food}$$ divided by the caloric value of associated food category. In addition, plant-based food categories can also be used as livestock feed. The amount of plant-based food used for feed depends on crop-based meat demand, feed share of four plant-based food, and unit-feed requirement for livestock. Food production ($$Prod_{food}$$) is eventually steered by waste-adjusted food demand, which is calculated as $$Food\_Dem_{food}$$ divided by a waste fraction ($$\varphi\_Wst$$) of supply.
-
+Food demand ($$Food\_Dem_{food}$$) is calculated as $$Cal\_Dem_{food}$$ divided by the caloric value of associated food category. In addition, plant-based food categories can also be used as livestock feed. The amount of plant-based food used for feed depends on crop-based meat demand, feed share of four plant-based food, and unit-feed requirement for livestock. Food demand ($$Food\_Dem_{food}$$) is calculated as annual caloric intake demand (\sum{Cal\_Dem_{food}}) divided by a waste fraction ($$\varphi\_Wst_{food}$$) of supply as below. Food production ($$Prod_{food}$$) is eventually steered by waste-adjusted food demand and the subsequent desired crop production that incldues feed demand. 
 $$
-Prod_{food}(t) = \frac
-    {Food\_Dem_{food}(t)}
-    {1-\varphi\_Wst}
+Food\_Dem_{food}(t) = \frac
+    {Cal\_Dem_{food}(t)}
+    {1-\varphi\_Wst_{food}}
 $$
 
 (Eq. 7.6)
