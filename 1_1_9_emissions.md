@@ -136,29 +136,27 @@ where emission factors $$EF_{Energy}^{CO_2}$$, $$EF_{Energy}^{CH_4}$$, $$EF_{Ene
 In FeliX, emissions from Industry and Waste are modeled directly and indirectly through their relationship with Gross World Product (see $$GWP$$ in [Economy Module](1_1_2_economy.md)).
 
 **CH₄ from Waste** emissions are calculated using the Municipal Solid Waste (MSW) disposal rate, which is estimated from GWP using the IPCC (2000) formulation:
+
 $$
 Emission_{Waste}^{CH_4}(t) = MSW(GWP)(t) \times EF_{Waste}^{CH_4} \times Abatement^{CH_4}_{Waste}(t)
 \quad \text{(Eq. 9.13)}
 $$
+
 where MSW is derived from a linear regression with GWP (gradient = 0.027, constant = 0.5695). The emission factor $$EF_{Waste}^{CH_4}$$ is calibrated within IPCC default uncertainty ranges, using a weighted average of different waste disposal site conditions. This is calibrated with historical data from the RCMIP (2020).
 
 **N₂O from Industry** emissions are calculated as:
+
 $$
 Emission_{Industrial}^{N_2O}(t) = GWP(t) \times EF_{Industrial}^{N_2O} \times Abatement^{N_2O}_{Industry}(t)
 \quad \text{(Eq. 9.14)}
 $$
+
 where $$EF_{Industrial}^{N_2O}$$ represents the industrial emission factor in metric tons of N₂O per dollar of GWP. This is calibrated with historical data from RCMIP (2020).
 
 ## 9.5 Abatement Fractions
-<figure>
-    <div style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:flex-start;">
-        <img src="images/9_Abatement_CH4_Energy.png" alt="CH4 energy abatement adoption fractions" style="flex:1 1 360px; max-width:600px;">
-        <img src="images/9_CH4_Fossil_Industrial.png" alt="CH4 waste and fossil industrial emissions after abatement" style="flex:1 1 360px; max-width:600px;">
-    </div>
-    <figcaption style="text-align:center; margin-top:6px;">
-        Figure 9.1. (Upper) CH₄ energy abatement adoption fractions across SSP-RCP scenarios (Ref=SSP2-4.5, Optimistic=SSP1-2.6, Pessimistic=SSP3-7.0). The observed differences is caused by the different maximum abatable fraction. (Lower) Resultant CH₄ waste and fossil industrial emissions after abatement, is reasonably consistent with other IAM trajectories.
-    </figcaption>
-</figure>
+|[![](images/9_Abatement.png)](images/9_Abatement.png)|
+|:--|
+|Figure 9.1. (1) CH₄ energy abatement adoption fractions across SSP-RCP scenarios (Ref=SSP2-4.5, Optimistic=SSP1-2.6, Pessimistic=SSP3-7.0). The observed differences is caused by the different maximum abatable fraction. (2) Resultant CH₄ waste and fossil industrial emissions after abatement, is reasonably consistent with other IAM trajectories|
 
 Abatement factors account for technological improvements in emission reduction that FeliX does not explicitly model. Each abatement factor is a dimensionless value between 0 and 1, representing the fraction of baseline emissions that has been eliminated through technological advancement. For instance, an abatement factor of 0.8 indicates that 80% of baseline emissions have been abated, leaving only 20% of original emissions. 
 
@@ -198,29 +196,3 @@ $$
 - IPCC, 2014. Climate Change 2014: Mitigation of Climate Change. Contribution of Working Group III to the Fifth Assessment Report. Cambridge University Press, Cambridge, UK.
 - Nicholls, Z. R. J., Meinshausen, M., Lewis, J., Gieseke, R., Dommenget, D., Dorheim, K., Fan, C.-S., Fuglestvedt, J. S., Gasser, T., Golüke, U., Goodwin, P., Hartin, C., Hope, A. P., Kriegler, E., Leach, N. J., Marchegiani, D., McBride, L. A., Quilcaille, Y., Rogelj, J., Salawitch, R. J., Samset, B. H., Sandstad, M., Shiklomanov, A. N., Skeie, R. B., Smith, C. J., Smith, S., Tanaka, K., Tsutsui, J., and Xie, Z., 2020. Reduced Complexity Model Intercomparison Project Phase 1: introduction and evaluation of global-mean temperature response. Geosci. Model Dev., 13, 5175–5190. https://doi.org/10.5194/gmd-13-5175-2020
 - Wilson, C., 2012. Up-scaling, formative phases, and learning in the historical diffusion of energy technologies. Energy Policy, 50, 81-94. https://doi.org/10.1016/j.enpol.2012.04.077.
-<!--
-$$
-CO2_{total}(t) =
-    CO2_{LULUCF}(t) +
-    CO2_{Energy}(t)
-    \quad \text{(Eq. 1)}
-$$
-
-$$
-CH4_{total}(t) =
-    CH4_{Agri}(t) +
-    CH4_{LULUCF}(t) +
-    CH4_{Energy}(t) +
-    CH4_{IndWaste}(t)
-    \quad \text{(Eq. 2)}
-$$
-
-$$
-N2O_{total}(t) =
-    N2O_{Agri}(t) +
-    N2O_{LULUCF}(t) +
-    N2O_{Energy}(t) +
-    N2O_{IndWaste}(t)
-    \quad \text{(Eq. 3)}
-$$
-
