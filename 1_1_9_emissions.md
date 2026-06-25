@@ -48,7 +48,7 @@ Table 9.1: Sector, Activity, and Greenhouse Gas Emission Contributions.
 
 ## 9.1 Agriculture Emissions 
 <!--Sector-->
-Agriculture activities contribute primarily to $$CH_4$$ and $$N_2O$$ emissions. FeliX quantifies agricultural emissions are based on production rate of various food items (see [Land Use and Fertilizer Use Module](1_1_5_land_use_and_fertilizer_use.md)). Even the emission formula from agricultural soils ($$Emis_{AgricultureSoils}^{N2O}$$) which are based on IPCC (2006a) guidelines, are derived from nitrogen flows ($$N$$), which themselves are calculated using the production rates of animal-based food.
+Agriculture activities contribute primarily to $$CH_4$$ and $$N_2O$$ emissions. FeliX quantifies agricultural emissions are based on production rate of various food items (see [Land Use and Fertilizer Use Module](1_1_5_land_use_and_fertilizer_use.md)). Even the emission formula from agricultural soils ($$Emis_{AgricultureSoils}^{N_2O}$$) which are based on IPCC (2006a) guidelines, are derived from nitrogen flows ($$N$$), which themselves are calculated using the production rates of animal-based food.
 
 $$
 Emis_{LivestockManure}^{Gas}(t) = \sum_{AnimalFood} Prod_{AnimalFood}(t) \times EF^{Gas}_{LivestockManure} \times \frac{1}{Yield(t)} \times Abatement^{Gas}_{Agriculture}(t), 
@@ -68,7 +68,7 @@ Emis_{CropBurning}^{Gas}(t) = \sum_{PlantFood}Prod_{PlantFood}(t) \times Residue
 $$
 
 $$
-Emis_{AgricultureSoils}^{N2O}(t) =
+Emis_{AgricultureSoils}^{N_2O}(t) =
 \left(N_{Commercial}(t) \times EF_{Direct} +
 N_{Manure}(t) \times EF_{Volatilization} +
 N_{Leaching}(t) \times EF_{Leaching}\right) \times Abatement^{N_2O}_{Agriculture}(t)
@@ -198,6 +198,8 @@ $$
 - IPCC, 2014. Climate Change 2014: Mitigation of Climate Change. Contribution of Working Group III to the Fifth Assessment Report. Cambridge University Press, Cambridge, UK.
 - Nicholls, Z. R. J., Meinshausen, M., Lewis, J., Gieseke, R., Dommenget, D., Dorheim, K., Fan, C.-S., Fuglestvedt, J. S., Gasser, T., Golüke, U., Goodwin, P., Hartin, C., Hope, A. P., Kriegler, E., Leach, N. J., Marchegiani, D., McBride, L. A., Quilcaille, Y., Rogelj, J., Salawitch, R. J., Samset, B. H., Sandstad, M., Shiklomanov, A. N., Skeie, R. B., Smith, C. J., Smith, S., Tanaka, K., Tsutsui, J., and Xie, Z., 2020. Reduced Complexity Model Intercomparison Project Phase 1: introduction and evaluation of global-mean temperature response. Geosci. Model Dev., 13, 5175–5190. https://doi.org/10.5194/gmd-13-5175-2020
 - Wilson, C., 2012. Up-scaling, formative phases, and learning in the historical diffusion of energy technologies. Energy Policy, 50, 81-94. https://doi.org/10.1016/j.enpol.2012.04.077.
+
+
 <!--
 $$
 CO2_{total}(t) =

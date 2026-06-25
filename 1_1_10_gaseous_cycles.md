@@ -8,7 +8,7 @@ description: the gaseous cycles section of felix
 ---
 
 # 10. Gaseous cycles
-FeliX models the atmospheric cycles of three major greenhouse gases: $$CO_2$$, $$CH_4$$, and $$N_2O$$. These gases accumulate in the atmosphere through emissions from various sectors (detailed in the [Emissions Module](1_1_9_emissions.md)). The atmospheric concentrations are calculated by converting their respective stocks ($$C\_Stk_{Atm}$$, $$CH4\_Stk_{Atm}$$, and $$N2O\_Stk_{Atm}$$) from mass units (tons) to volume mixing ratios (ppm or ppb), using their molar masses and the total number of moles in the atmosphere.
+FeliX models the atmospheric cycles of three major greenhouse gases: $$CO_2$$, $$CH_4$$, and $$N_2O$$. These gases accumulate in the atmosphere through emissions from various sectors (detailed in the [Emissions Module](1_1_9_emissions.md)). The atmospheric concentrations are calculated by converting their respective stocks ($$C\_Stk_{Atm}$$, $$CH_4\_Stk_{Atm}$$, and $$N_2O\_Stk_{Atm}$$) from mass units (tons) to volume mixing ratios (ppm or ppb), using their molar masses and the total number of moles in the atmosphere.
 
 |[![](images/B_gas_cycles.png)](images/B_gas_cycles.png)
 |:--|
@@ -54,7 +54,7 @@ where $$\tau_0$$ is the baseline lifetime, $$Effect(TempChange(t))$$ is the temp
 
 ## 10.3. Nitrous Oxide Cycle ($N_2O$)
 
-Nitrous oxide ($N_2O$) is modeled as a first-order impulse-response system with a single atmospheric stock. The system includes inflows from natural and anthropogenic emissions, while outflows occur through stratospheric reactions with a chemical lifetime ($\tau_{N_2O} \approx 114$ years).
+Nitrous oxide ($$N_2O$$) is modeled as a first-order impulse-response system with a single atmospheric stock. The system includes inflows from natural and anthropogenic emissions, while outflows occur through stratospheric reactions with a chemical lifetime ($$\tau_{N_2O} \approx 114$$ years).
 
 **Atmospheric Nitrous Oxide Stock:**
 $$
