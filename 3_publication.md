@@ -21,11 +21,18 @@ Below is a full list of peer-reviewed publications and reports with the FeliX mo
 
 ## Full List of FeliX Publications
 
-- Yang J., Gao L., Guo Z., et al., **2025** [Integrative Sustainable Development Goal policy portfolios to accelerate global progress towards a more sustainable future: a modelling study](https://doi.org/10.1016/j.lanplh.2025.101318). *Lancet Planetary Health*.
+- Tantaroudas, N.D., Tan, R.Y.W., Karachalios, I., et al. **2026**. [A web-based interactive simulation environment for the FeliX Integrated Assessment Model](https://open-research-europe.ec.europa.eu/articles/6-89) [version 1; peer review: 1 approved, 1 approved with reservations]. *Open Research Europe*, **6**: 89.
+
+- Eker, S, Reiter, C, Liu, Q., et al. **2026** [Wellbeing cost of carbon](https://doi.org/10.1017/sus.2025.10042). *Global Sustainability*, **9**, e1.
+
+- Yu, L., Wu, X., Sang, S., et al., **2026** [Yellow River Basin water stress has eased but may persist without enhanced efficiency and sustainable agriculture](https://doi.org/10.1038/s44458-025-00005-7). *Communications Sustainability*, **1**, 9.
+
+
+- Yang, J., Gao, L., Guo, Z., et al., **2025** [Integrative Sustainable Development Goal policy portfolios to accelerate global progress towards a more sustainable future: a modelling study](https://doi.org/10.1016/j.lanplh.2025.101318). *Lancet Planetary Health*.
 
 - Liu, Q., et al., **2025**. [Assessing the Dynamic Evolution of Global Energy Poverty Under Uncertain Climate Trends–Shaped Future Pathways](https://doi.org/10.1002/sd.70396) *Sustainability Science*.
 
-- Ye Q, Liu Q, Swamy D, Moallemi E, Gao L, Rydzak F, Eker S., **2024** [FeliX 2.0: An integrated model of climate, economy, environment, and society interactions](https://www.sciencedirect.com/science/article/pii/S1364815224001828). *Environmental Modeling and Software* (179). 
+- Ye, Q, Liu, Q, Swamy, D, Moallemi, E, Gao, L, Rydzak, F, Eker, S., **2024** [FeliX 2.0: An integrated model of climate, economy, environment, and society interactions](https://www.sciencedirect.com/science/article/pii/S1364815224001828). *Environmental Modeling and Software* (179). 
 
 - Yang, J., Gao, L., Liu, Q., Guo, Z., **2023**. [Assessing environmental impacts of response strategies for sustainable food system transformation](https://doi.org/10.1002/sd.2795). *Sustainable Development* 2795.
 

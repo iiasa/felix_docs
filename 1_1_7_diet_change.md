@@ -12,7 +12,7 @@ Food demand is quantified based on the total caloric demand for eight main food 
 
 Followers of meat-based and vegetarian diets are assumed to eat a standard mix of eight food categories. We used typical United States’ diets (Pimentel and Pimentel, 2003), a reference world diet and the global average supply statistics, as benchmarks to understand how meat-based and vegetarian diets differ globally. Based on such proportional differences of meat-based and vegetarian diets, we form the reference meat-based and vegetarian diets by decomposing the world’s average diet according to the population fraction of the two groups. Besides reference diets, we also built flexibility in the model to run scenario analyses with flexitarian, healthy-eating, and vegan diets (Springmann et al. 2018).
 
-## 6.1. Caloric demand
+## 7.1. Caloric demand
 Total annual caloric demand for plant-based food ($$Cal\_Dem$$) is the sum of total plant-based caloric intake by the vegetarian population ($$Pop\_Veg$$) and meat-eating population ($$Pop\_Meat$$).
 
 $$
@@ -61,17 +61,7 @@ where $$Intk\_Meat$$ is the annual per-capita intake of meat-based calories in t
 It is important to note that Eqs. Eq. 7.1-7.5 are actually defined for each gender and age group, since caloric intake depends on age and gender. $$Intk\_Tot$$ is adjusted for each age cohort and gender based on the estimated calorie needs for moderate activity level. The heterogeneity for physical activity levels, however, is not included because the moderate level represents the average of various activity and consumption levels. 
 
 ## 7.2 Food demand and food production
-Food demand ($$Food\_Dem_{food}$$) is calculated as $$Cal\_Dem_{food}$$ divided by the caloric value of associated food category. In addition, plant-based food categories can also be used as livestock feed. The amount of plant-based food used for feed depends on crop-based meat demand, feed share of four plant-based food, and unit-feed requirement for livestock. Food demand ($$Food\_Dem_{food}$$) is calculated as annual caloric intake demand (\sum{Cal\_Dem_{food}}) divided by a waste fraction ($$\varphi\_Wst_{food}$$) of supply as below. Food production ($$Prod_{food}$$) is eventually steered by waste-adjusted food demand and the subsequent desired crop production that incldues feed demand. 
-
-$$
-Food\_Dem_{food}(t) = \frac
-    {Cal\_Dem_{food}(t)}
-    {1-\varphi\_Wst_{food}}
-$$
-
-(Eq. 7.6)
-
-$$\varphi\_Wst$$ is set as 0.30 for grains, 45% for pulses, vegetables and fruits the waste fraction is 45%, and 20% for other food categories.
+Food demand ($$Food\_Dem_{food}$$) is calculated as $$Cal\_Dem_{food}$$ divided by the caloric value of associated food category. In addition, plant-based food categories can also be used as livestock feed. The amount of plant-based food used for feed depends on crop-based meat demand, feed share of four plant-based food, and unit-feed requirement for livestock. Food production ($$Prod_{food}$$) is eventually steered by waste-adjusted food demand and the subsequent desired crop production that incldues feed demand. Waste fraction is set as 0.30 for grains, 45% for pulses, vegetables and fruits the waste fraction is 45%, and 20% for other food categories.
 
 The production of animal-based food products (pasture-based meat, crop-based meat, dairy, and eggs) follows a similar approach based on grassland availability, food demand and land yield. Dairy production is aligned with meat production, and the production of eggs is formulated with respect to crop-based meat production, which depends on the feed fraction of crop production.
 
