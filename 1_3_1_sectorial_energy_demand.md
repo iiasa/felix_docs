@@ -137,7 +137,7 @@ Country-level IEA EEI data are used as an external reference for long-run constr
 
 Passenger transport requires an additional adjustment because the EEI and WEB databases use different transport accounting boundaries. The EEI activity and intensity indicators represent ordinary passenger and freight transport and exclude international aviation and marine bunkers, whereas these fuels are included in the WEB world-total transport series. International bunker energy is therefore added separately to the modelled ordinary transport total. Historical bunker energy is taken from the IEA WEB Extended Database as the sum of world aviation and marine bunkers for 1971-2022, with earlier values back-cast to 1900 (International Energy Agency, 2025c). After the historical period, bunker energy is projected in proportion to modelled ordinary passenger and freight transport energy using the average pre-COVID bunker share over 2015-2019. Total transport energy is then calculated as the sum of ordinary passenger and freight transport energy and international bunker energy, aligning the model with the WEB total-transport accounting boundary.
 
-: These sectors are treated as partially exogenous because robust per-capita activity indicators are not available. Future model development may represent income-driven per-capita energy consumption more explicitly.
+These sectors are treated as partially exogenous because robust per-capita activity indicators are not available. Future model development may represent income-driven per-capita energy consumption more explicitly.
 
 ## References
 
