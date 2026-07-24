@@ -69,7 +69,7 @@ $$E_s^{pc}(t)$$ is per-capita final energy consumption.
 
 This activity-intensity structure allows changes in activity and energy intensity to be represented separately. Sectorial parameters are calibrated using IEA Energy End-uses and Efficiency Indicators (EEI), IEA World Energy Balances (WEB), and World Bank GDP and population data (International Energy Agency, 2025a, 2025b; World Bank, 2024a, 2024b).
 
-## 1.2. Industry, commercial/services, and freight transport
+## 1.2. Industry, commercial services, and freight transport
 
 For industry, commercial/services, and freight transport, final energy consumption is modelled directly as per-capita energy use. Historical global per-capita final energy use is constructed from IEA WEB sectorial energy totals and World Bank population data.
 
